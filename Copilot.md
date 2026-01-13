@@ -35,7 +35,7 @@
 - CUSTOM INSTRUCTIONS
 
   Contain high-level information about your project to help a model to provide better answers.
-  You can use the `Geneare Chat Instructions` feature of GitHub Copilot to have these instructions created for you automatically by Copilot.
+  You can use the `Generate Chat Instructions` feature of GitHub Copilot to have these instructions created for you automatically by Copilot.
   Once Custom Instructions are created for a project they will be automatically included in each Chat interaction and provide GitHub Copilot and the model with more project level information.
   Any Custom Instructions will always be appended at the end of the Agent System Prompt.
   Any nummber of files with Custom Instructions can be appended to the Agent System Prompt.

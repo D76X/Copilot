@@ -49,17 +49,23 @@ The composition of a prompt that is sent upt to Copilot from the IDE:
     - Tool-Specific Instructions (the tools in the IDE)
     - Output Format Instructions
     - **CUSTOM INSTRUCTION(S)** [appended one after the other as the appear in the ./github/instructions folder]
+    - **CUSTOM AGENT**
 
 2. The User Prompt [1]
     - Environment Info
     - Workspace Info: the whole file structure of the project
     
 3. The User Prompt [2]
+    - **PROMPT FILES** ( these can refer to **CUSTOM INSTRUCTION(S)**)
     - Context Info: Current Date & Time, list of open terminal, etc.
     - Editor Context: any file that may have been added to teh chat.
-    - **The User Request**
+    - **The User Request** (this can refer to **PROMPT FILES**)
 
-Copilot returns all teh above and the appended section **Assistant Message**. 
+Copilot returns all the above and the appended section **Assistant Message**. 
+
+> AGENTIC WORKFLOW
+
+The main objective of **CUSTOM INSTRUCTION(S), PROMPT FILES and CUSTOM AGENT** is to compose (define) an **AGENTIC WORKFLOW**.
 
 > CUSTOM INSTRUCTIONS
 
@@ -71,7 +77,6 @@ Copilot returns all teh above and the appended section **Assistant Message**.
 
 > PROMPT FILES
 
-
 - Prompt Files are reusable prompts that can be defined and reused in the Chat.
 - It is possible to specify a model which may be used to reduce token consumption for well-known tasks.
 
@@ -81,3 +86,24 @@ Prompt files are Markdown files that define reusable prompts for common developm
 
 They can include task-specific guidelines or reference custom instructions to ensure consistent execution. 
 **Unlike custom instructions that apply to all requests, prompt files are triggered on-demand for specific tasks**.
+
+> CUSTOM AGENTS
+
+- They used to be called **CUSTOM MODES**.
+- The basic idea is to buid instructions to override an agent's default behaviour.
+- The **CUSTOM AGENTS** is special because it is **always appended to the System Prompt**.
+
+[Custom agents in VS Code](https://code.visualstudio.com/docs/copilot/customization/custom-agents)  
+
+The built-in agents provide general-purpose configurations for chat in VS Code. For a more tailored chat experience, you can create your own custom agents.
+Custom agents consist of a set of instructions and tools that are applied when you switch to that agent.
+For example, a "Plan" agent could include instructions for generating an implementation plan and only use read-only tools.
+Custom agents are defined in a `.agent.md` Markdown file.
+
+Custom agents enable you to configure the AI to adopt different personas tailored to specific development roles and tasks. 
+For example, you might create agents for a security reviewer, planner, solution architect, or other specialized roles. Each persona can have its own behavior, available tools, and instructions.
+
+**The focus of any custom agent is to define a specific identity for the operation of the agent**, this is very different from what is done with **CUSTOM INSTRUCTIONS** with which a sequence
+of instructions is provided to a plain built-in agent.
+
+---

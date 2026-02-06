@@ -352,6 +352,12 @@ Some popular examples, with many more in the works:
 
 ---
 
+## Enable Models In GitHub
+
+[Code It With AI - Build Your First .NET AI App (Using GitHub + GPT-5 Mini) (Ep. 4) DevExpress](https://www.youtube.com/watch?v=9F7muWd4sow)  
+
+---
+
 
 [10-Code It With AI - Building Custom Agents (ep.10)](https://www.youtube.com/watch?v=3xoxuSNX2zw)  
 

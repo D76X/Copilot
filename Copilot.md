@@ -358,6 +358,12 @@ Some popular examples, with many more in the works:
 
 ---
 
+## Turn a paragraph of text into a schedule
+
+[Code It With AI - .NET + AI: Parse Natural Language into Calendar Events (ep.5) DevExpress](https://www.youtube.com/watch?v=WcR6bRnoaxA&t=15s)  
+
+---
+
 
 [10-Code It With AI - Building Custom Agents (ep.10)](https://www.youtube.com/watch?v=3xoxuSNX2zw)  
 

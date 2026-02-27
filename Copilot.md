@@ -322,8 +322,6 @@ Some popular examples, with many more in the works:
 
 [PostgreSQL MCP Server](https://www.cdata.com/drivers/postgresql/mcp/?kw=postgresql%20mcp%20server&cpn=23029248957&_bt=775957453612&_bk=postgresql%20mcp%20server&_bm=e&_bn=g&_bg=187103520153&utm_source=google&utm_medium=cpc&utm_campaign=Search_-_Connect_AI_-_Source_-_PostgreSQL&utm_content=PostgreSQL_-_General_MCP&utm_term=e|postgresql%20mcp%20server&kw=postgresql%20mcp%20server&cpn=23029248957&gad_source=1&gad_campaignid=23029248957&gbraid=0AAAAADmmIIjqUcLWz1tQGyd1x2uOjCJGg&gclid=CjwKCAiA1obMBhAbEiwAsUBbIrjMsC9rS30xP5veqM9m7-goV2KeOWeWRk2Y1ZDiKXYzsciQZwHJzhoCQhIQAvD_BwE) 
 
-
-
 ---
 
 # [Code It With AI - Playlist by DevExpress](https://www.youtube.com/playlist?list=PL8h4jt35t1whFkEryOz94bu2KQPY48HLy)  
@@ -333,16 +331,37 @@ Some popular examples, with many more in the works:
 
 ---
 
-## 01 Generate Documentation
+[14-Code It With AI - AvnDataGenie Part 2 (ep.14) DevExpress](https://www.youtube.com/watch?v=HxyN6zUkMaE)  
 
-[01-Code It With AI - Generating Documentation (ep.1)](https://www.youtube.com/watch?v=RewtTswNdHY&list=PL8h4jt35t1whFkEryOz94bu2KQPY48HLy&index=14)  
-[01-Code-it-with-AI GitHub Episode 01](https://github.com/Code-it-with-AI/Episode-01)  
+
+[10-Code It With AI - Building Custom Agents (ep.10)](https://www.youtube.com/watch?v=3xoxuSNX2zw)  
 
 ---
 
-## 02 Use Custom Instraction Files & Prompt Files to specialize workflow and enforce coding standards and provide Agent personality
+## 07 GitHub Copilot CLI
 
-[Code It With AI - Mastering Copilot Prompts & Instructions in .NET (ep.2) DevExpress](https://www.youtube.com/watch?v=TCPeccH5M3g&t=644s) 
+[Code It With AI - Commanding the CLI with Copilot (ep.7) DevExpress](https://www.youtube.com/watch?v=gxEaAocq6RQ)  
+
+[GitHub Copilot CLI](https://github.com/features/copilot/cli)  
+[githubcopilot-cli](https://github.com/github/copilot-cli?locale=en-US)  
+
+---
+
+## 06 Code It With AI - Text to T-SQL
+
+[Code It With AI - Text to T-SQL DevExpress (ep.6)](https://www.youtube.com/watch?v=2By_ARHx904&t=922s)  
+
+---
+
+## 05 Turn a paragraph of text into a schedule
+
+[Code It With AI - .NET + AI: Parse Natural Language into Calendar Events (ep.5) DevExpress](https://www.youtube.com/watch?v=WcR6bRnoaxA&t=15s)  
+
+---
+
+## 04 Enable Models In GitHub
+
+[Code It With AI - Build Your First .NET AI App (Using GitHub + GPT-5 Mini) (Ep. 4) DevExpress](https://www.youtube.com/watch?v=9F7muWd4sow)  
 
 ---
 
@@ -352,22 +371,16 @@ Some popular examples, with many more in the works:
 
 ---
 
-## Enable Models In GitHub
+## 02 Use Custom Instraction Files & Prompt Files to specialize workflow and enforce coding standards and provide Agent personality
 
-[Code It With AI - Build Your First .NET AI App (Using GitHub + GPT-5 Mini) (Ep. 4) DevExpress](https://www.youtube.com/watch?v=9F7muWd4sow)  
-
----
-
-## Turn a paragraph of text into a schedule
-
-[Code It With AI - .NET + AI: Parse Natural Language into Calendar Events (ep.5) DevExpress](https://www.youtube.com/watch?v=WcR6bRnoaxA&t=15s)  
+[Code It With AI - Mastering Copilot Prompts & Instructions in .NET (ep.2) DevExpress](https://www.youtube.com/watch?v=TCPeccH5M3g&t=644s) 
 
 ---
 
+## 01 Generate Documentation
 
-[10-Code It With AI - Building Custom Agents (ep.10)](https://www.youtube.com/watch?v=3xoxuSNX2zw)  
-
-[14-Code It With AI - AvnDataGenie Part 2 (ep.14) DevExpress](https://www.youtube.com/watch?v=HxyN6zUkMaE)  
+[01-Code It With AI - Generating Documentation (ep.1)](https://www.youtube.com/watch?v=RewtTswNdHY&list=PL8h4jt35t1whFkEryOz94bu2KQPY48HLy&index=14)  
+[01-Code-it-with-AI GitHub Episode 01](https://github.com/Code-it-with-AI/Episode-01)  
 
 ---
 

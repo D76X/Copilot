@@ -338,12 +338,24 @@ Some popular examples, with many more in the works:
 
 ---
 
+## 08 MCP Servers in more detail
+
+[Code It With AI - Digging Deeper into MCPs (ep.8) DevExpress](https://www.youtube.com/watch?v=GjnCOFEJRvA)  
+
+
+---
+
 ## 07 GitHub Copilot CLI
 
 [Code It With AI - Commanding the CLI with Copilot (ep.7) DevExpress](https://www.youtube.com/watch?v=gxEaAocq6RQ)  
 
 [GitHub Copilot CLI](https://github.com/features/copilot/cli)  
 [githubcopilot-cli](https://github.com/github/copilot-cli?locale=en-US)  
+
+## Integration with Azure DevOps
+
+[MCP Server for Azure DevOps](https://learn.microsoft.com/en-us/azure/devops/release-notes/roadmap/2025/general-mcp-server-for-ado)   
+[microsoft/azure-devops-mcp](https://github.com/microsoft/azure-devops-mcp)   
 
 ---
 

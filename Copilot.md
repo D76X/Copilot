@@ -517,11 +517,63 @@ Example: the GitHub MCP server reaching out to GitHub on your behalf.
 ```
 copilot
 > List the recent commits in this repository
+
+> /mcp show
+
+> What's in GitHub issue #42?
+
+Issue #42: Login fails with special characters
+Status: Open
+Labels: bug, priority-high
+Description: Users report that passwords containing...
+
 ```
+
+## MCP Servers Configuration
+
+[Extending GitHub Copilot Chat with Model Context Protocol (MCP) servers](https://docs.github.com/en/copilot/how-tos/provide-context/use-mcp/extend-copilot-chat-with-mcp)   
+
+For user-level configuration that applies to all projects  : `~/.copilot/mcp-config.json` 
+For project-level configuration, that applies to just the current workspace: `.vscode/mcp.json` 
+
+> The following is an example with an outdated syntax!
+
+```
+{
+  "mcpServers": {
+    "server-name": {
+      "type": "local",
+      "command": "npx",
+      "args": ["@package/server-name"],
+      "tools": ["*"]
+    }
+  }
+}
+```
+
+[Add and manage MCP servers in VS Code](https://code.visualstudio.com/docs/copilot/customization/mcp-servers)  
+
+The correct syntax:
+
+```
+{
+  "servers": {
+    "github": {
+      "type": "http",
+      "url": "https://api.githubcopilot.com/mcp"
+    },
+    "playwright": {
+      "command": "npx",
+      "args": ["-y", "@microsoft/mcp-server-playwright"]
+    }
+  }
+}
+```
+
 
 ---
 
-[Model Context Protocol servers](https://github.com/modelcontextprotocol/servers/blob/main/README.md)  
+# [Model Context Protocol servers](https://github.com/modelcontextprotocol/servers/blob/main/README.md)  
 
 This repository is a collection of reference implementations for the Model Context Protocol (MCP), 
 as well as references to community-built servers and additional resources.
@@ -536,7 +588,9 @@ A number of Microsoft products have already added support for MCP including:
 
 - [Copilot Studio](https://www.microsoft.com/en-us/microsoft-copilot/blog/copilot-studio/introducing-model-context-protocol-mcp-in-copilot-studio-simplified-integration-with-ai-apps-and-age
 nts/)  
+
 - [VS Code’s new GitHub Copilot agent mode](https://code.visualstudio.com/blogs/2025/02/24/introducing-copilot-agent-mode)  
+
 - [Semantic Kernel](https://devblogs.microsoft.com/semantic-kernel/integrating-model-context-protocol-tools-with-semantic-kernel-a-step-by-step-guide/)  
 
 And many Microsoft products are creating MCP servers to access their functionality. 
@@ -565,7 +619,118 @@ Some popular examples, with many more in the works:
 [Awesome MCP Servers](https://mcpservers.org/)  
 [MCP SO - Find Awesome MCP Servers and clients](https://mcp.so)    
 
-> Some handy MCP Servers:
+---
+
+## Some handy MCP Servers:
+
+[ Installation & Getting Started with MCP in different Tools](https://github.com/microsoftdocs/mcp?tab=readme-ov-file#-installation--getting-started)  
+
+MCP Servers can be installed for the following tools:
+
+- VS Code 
+- GitHub Copilot CLI
+
+The way you install them changes according to the tool that must use them:
+
+### VS Code
+
+MCP Servers are installed as VS Code extentions. In a new install of VS Code the **Allow MCP Server as Extension**
+approval must be granted first, the use the syntax `@mcp ...` to find the MCP Server extension to install in VS Code.
+
+> Example: `@mcp microsoft` lists all MCP Servers by Microsoft, i.e. the Microsoft Learn MCP Server
+
+If may see the error; this setting `@id:chat.mcp.access` must be enabled if your organization allows it: 
+`This mcp server cannot be installed because Model Context Protocol servers are disabled in the Editor. Please check your settings.`
+
+### Git Copilot CLI
+
+[Git Copilot CLI > MCP Server Configuration](https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference#mcp-server-configuration)  
+
+The Git Copilot CLI istalls MCP Servers as **plugings** which may also contain related **skills**: 
+
+> Example: 
+`/plugin install microsoftdocs/mcp`
+`/mcp show`
+
+Notice that the fact that you are not allowed to install MCP Servers in VS Code by restrictions 
+imposed by your organization may not imply that you cannot use MCP Servers in the GitHub Copilot MCP.
+Use `/mcp show` to list the MCP Server installed and used by GitHub Copilot.
+
+`.vscode/mcp.json` is VS Code-only; Copilot CLI has its own separate MCP configuration.
+From the CLI docs, you manage MCP servers in Copilot CLI using the /mcp slash command interactively, 
+which writes to a separate config file (`~/.copilot/mcp.json` or similar). 
+The two configurations are independent.
+
+Use the `mcp` command and its options for Git Copilot CLI and its MCP Servers. 
+
+Your MCP servers are saved in: `~/.copilot/mcp-config.json`
+Or wherever `COPILOT_HOME` points to. 
+This is separate from `.vscode/mcp.json`.
+They are independent configurations.
+
+| Command      | Funtion |
+| ----------- | ----------- |
+| `/mcp add`      | Interactively add a new MCP server (fill fields with Tab, save with Ctrl+S)       |
+| `/mcp add`   | Open the MCP management UI to view/edit/remove servers          |
+
+> Practical tip: mirroring your VS Code config
+
+Since you already have 3 servers configured in .vscode/mcp.json, you'd need to add them separately to Copilot CLI if
+you want to use them there too. You can either:
+
+1. Use `/mcp add` interactively for each one, or
+2. Edit `~/.copilot/mcp-config.json` directly with the same server definitions
+
+### One important note
+
+The GitHub MCP server is already built in to Copilot CLI — you don't need to add it manually like you do in VS Code.
+
+The playwright and filesystem servers from your `.vscode/mcp.json` are the ones you might want to add if you need them in the CLI too.
+
+
+
+---
+
+[Filesystem MCP Server](https://github.com/modelcontextprotocol/servers/tree/main/src/filesystem)  
+
+Node.js server implementing Model Context Protocol (MCP) for filesystem operations.
+
+---
+
+[Microsoft Learn MCP Server](https://github.com/microsoftdocs/mcp)   
+
+Every MCP server you've seen so far (filesystem, Context7) runs locally on your machine. 
+But MCP servers can also run remotely, meaning you just point Copilot CLI at a URL and 
+it handles the rest. 
+
+No npx or python, no local process, no dependencies to install.
+
+```
+"microsoft-learn": {
+      "type": "http",
+      "url": "https://learn.microsoft.com/api/mcp"
+    }
+```
+
+---
+
+[Context7 Platform - Up-to-date Code Docs For Any Prompt](https://github.com/upstash/context7)   
+
+This is a proprietary (licensed) alternative to the Microsoft Learn MCP Server.
+This MCP is not limited to Microsoft Learn.
+
+Without Context7 LLMs rely on outdated or generic information about the libraries you use. 
+
+You get:
+
+- Code examples are outdated and based on year-old training data
+- Hallucinated APIs that don't even exist
+- Generic answers for old package versions
+
+Context7 pulls up-to-date, version-specific documentation and code examples straight from the source 
+— and places them directly into your prompt.
+
+---
 
 [Perplexity MCP Server](https://docs.perplexity.ai/guides/mcp-server)   
 

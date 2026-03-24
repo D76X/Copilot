@@ -850,6 +850,10 @@ You use the copilot command with the --continue and --resume switches.
 >/rename urgent-bug-finding-and-fix-1
 > exit
 
+# if you want to resume a session but you do not rember its name
+# copilot will prompt you with a session picker..
+> copilot --resume
+
 # go back to the session: explore-code-and-setup
 > copilot --resume explore-code-and-setup
 > # ..

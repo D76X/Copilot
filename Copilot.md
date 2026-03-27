@@ -747,15 +747,28 @@ Context7 pulls up-to-date, version-specific documentation and code examples stra
 
 [14-Code It With AI - AvnDataGenie Part 2 (ep.14) DevExpress](https://www.youtube.com/watch?v=HxyN6zUkMaE)  
 
+GitHub Copilot is not an Agent, it is a runtime that hosts:
+
+- Agents
+- MCP Servers
+
+---
+
+## 10 Building Custom Agents
 
 [10-Code It With AI - Building Custom Agents (ep.10)](https://www.youtube.com/watch?v=3xoxuSNX2zw)  
+
+---
+
+## 09 Build your first MCP Server with C#
+
+[Code It With AI - Build your first MCP Server with C# (ep.9)](https://www.youtube.com/watch?v=vG__NyFvua8&t=4s)   
 
 ---
 
 ## 08 MCP Servers in more detail
 
 [Code It With AI - Digging Deeper into MCPs (ep.8) DevExpress](https://www.youtube.com/watch?v=GjnCOFEJRvA)  
-
 
 ---
 

@@ -1,5 +1,7 @@
 # Copilot
 
+
+
 # Copilot in VS Code
 
 [GitHub Copilot Fundamentals: AI Agents by Aaron Steward](https://app.pluralsight.com/ilx/video-courses/63ef6a3d-992d-4586-8c0c-760479bbad95/c1105e40-64c1-41c6-9dba-fd28f80a23d9/f49a1885-4902-41a8-8336-210eb6235171)   
@@ -533,7 +535,11 @@ Description: Users report that passwords containing...
 
 [Extending GitHub Copilot Chat with Model Context Protocol (MCP) servers](https://docs.github.com/en/copilot/how-tos/provide-context/use-mcp/extend-copilot-chat-with-mcp)   
 
-For user-level configuration that applies to all projects  : `~/.copilot/mcp-config.json` 
+
+For user-level configuration that applies to all projects  : 
+`~/.copilot/mcp-config.json`
+`~/home/user/.copilot/mcp-config.json` 
+
 For project-level configuration, that applies to just the current workspace: `.vscode/mcp.json` 
 
 > The following is an example with an outdated syntax!
@@ -928,8 +934,26 @@ Use with caution: /allow-all skips confirmation prompts. Great for trusted proje
 /usage	Display session usage metrics and statistics
 /session	Show session info and workspace summary
 /compact	Summarize conversation to reduce context usage
+
+--- 
+
 /share	Export session as markdown file or GitHub gist
 
+Use the /share slash command to export the current session to a Markdown file:
+This will save the conversation history to a .md file (by default in your current 
+directory or a location you specify). 
+
+You can then commit that file to source control.
+You can also share to a GitHub Gist instead if you prefer:
+
+/share --gist
+
+The resulting Markdown file captures the full conversation turn-by-turn, 
+making it useful as a reference or team knowledge document.
+
+---
+
+/ rename
 It is important to understand how to use /rename.
 You use the copilot command with the --continue and --resume switches.
 

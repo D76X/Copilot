@@ -765,6 +765,74 @@ GitHub Copilot is not an Agent, it is a runtime that hosts:
 
 [Code It With AI - Data Analysis with Copilot CLI (ep.11)](https://www.youtube.com/watch?v=VV6NvMA-tns&list=PL8h4jt35t1whFkEryOz94bu2KQPY48HLy&index=13&t=16s)  
 
+### What is Local Foundry?
+
+Foundry Local is a high-performance, on-device AI runtime stack that brings Microsoft Azure AI Foundry 
+capabilities to client devices (Windows/macOS), enabling developers to run LLMs and SLMs locally 
+without internet. 
+
+It offers hardware-accelerated inference (CPU/GPU/NPU) for, low-latency, private, and offline AI 
+applications, supporting ONNX models with OpenAI-compatible APIs.
+
+> Key Features and Benefits
+
+- Edge-Ready/Offline: 
+Operates fully on-device without cloud dependencies, ensuring data privacy.
+
+- Hardware Acceleration: 
+Optimized for diverse hardware, including Intel NPUs.
+
+- Model Interoperability: 
+Uses the ONNX (Open Neural Network Exchange) ecosystem, allowing models from frameworks like PyTorch or TensorFlow.
+
+- Developer Friendly: 
+Provides SDKs in Python, JavaScript, C#, and Rust, with an OpenAI-compatible API for easy integration.
+
+- Cost-Effective: 
+Eliminates cloud inference fees.
+
+Foundry Local is designed for applications needing to securely 
+handle data on-site while utilizing powerful AI models, allowing 
+developers to build and ship in-production AI apps on user devices.
+
+[What is Foundry Local?](https://learn.microsoft.com/en-us/azure/foundry-local/what-is-foundry-local)   
+
+### What is Ollama?
+
+Ollama is a runtime designed to host LLM; by analogy the GitHub Copilot tool built in VSCode
+or Visual Studio is a runtime to run all that a developer needs to interact with Copilot, etc.
+
+Ollama is an open-source tool that enables running large language models (LLMs) locally 
+on your own machine—Windows, macOS, or Linux—without needing the internet or cloud services. 
+It simplifies the process of downloading, managing, and running models, offering a lightweight 
+command-line interface to interact with models like Llama 3, Mistral, and Qwen.
+
+> Key features and benefits of Ollama include:
+
+- Data Privacy: 
+Because models run locally on your hardware, your data remains secure 
+and does not leave your machine.
+
+- Ease of Use: 
+It acts like a package manager for AI, allowing you to run models with a simple command, 
+such as ollama run llama3.Model 
+
+- Variety: 
+It supports a wide range of open-source models, including those optimized for text generation 
+(language models), multimodal tasks (analyzing images), and specialized tools.
+
+- Efficiency: 
+It leverages quantized (compressed) models, allowing them to run efficiently on personal computers, 
+even without high-end GPUs, by using CPU/RAM or available hardware acceleration.
+
+- Integration: 
+It provides a built-in API, making it easy to integrate with other programs (like Python or Node.js) 
+and to connect with frontend interfaces.
+
+Ollama serves as a local, private, and free alternative to cloud-based LLM services, making it 
+popular for developers, researchers, and users who want to explore AI without incurring API 
+costs or security risks.  
+
 ---
 
 ## 10 Building Custom Agents

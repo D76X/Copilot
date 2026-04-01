@@ -754,6 +754,19 @@ GitHub Copilot is not an Agent, it is a runtime that hosts:
 
 ---
 
+## Local LLM Runtime
+
+[Code It With AI - Ollama, a Local LLM Runtime (ep.12) DevExpress](https://www.youtube.com/watch?v=AvIi7lFuV-c&list=PL8h4jt35t1whFkEryOz94bu2KQPY48HLy&index=12)  
+
+
+---
+
+## Data Analysis on a DB with Copilot CLI
+
+[Code It With AI - Data Analysis with Copilot CLI (ep.11)](https://www.youtube.com/watch?v=VV6NvMA-tns&list=PL8h4jt35t1whFkEryOz94bu2KQPY48HLy&index=13&t=16s)  
+
+---
+
 ## 10 Building Custom Agents
 
 [10-Code It With AI - Building Custom Agents (ep.10)](https://www.youtube.com/watch?v=3xoxuSNX2zw)  
@@ -823,6 +836,10 @@ GitHub Copilot is not an Agent, it is a runtime that hosts:
 
 /diff	Review the changes made in the current directory
 /review	Run the code-review agent to analyze changes
+
+# perform a a multi-agent code review:
+/review  with opus, gtp 5.4 and sonnet 4.6 
+
 /research	Run deep research investigation using GitHub and web sources
 /terminal-setup	Enable multiline input support (shift+enter and ctrl+enter)
 

@@ -764,13 +764,6 @@ GitHub Copilot is not an Agent, it is a runtime that hosts:
 
 [Code It With AI - Ollama, a Local LLM Runtime (ep.12) DevExpress](https://www.youtube.com/watch?v=AvIi7lFuV-c&list=PL8h4jt35t1whFkEryOz94bu2KQPY48HLy&index=12)  
 
-
----
-
-## Data Analysis on a DB with Copilot CLI
-
-[Code It With AI - Data Analysis with Copilot CLI (ep.11)](https://www.youtube.com/watch?v=VV6NvMA-tns&list=PL8h4jt35t1whFkEryOz94bu2KQPY48HLy&index=13&t=16s)  
-
 ### What is Local Foundry?
 
 Foundry Local is a high-performance, on-device AI runtime stack that brings Microsoft Azure AI Foundry 
@@ -838,6 +831,14 @@ and to connect with frontend interfaces.
 Ollama serves as a local, private, and free alternative to cloud-based LLM services, making it 
 popular for developers, researchers, and users who want to explore AI without incurring API 
 costs or security risks.  
+
+---
+
+## Data Analysis on a DB with Copilot CLI
+
+[Code It With AI - Data Analysis with Copilot CLI (ep.11)](https://www.youtube.com/watch?v=VV6NvMA-tns&list=PL8h4jt35t1whFkEryOz94bu2KQPY48HLy&index=13&t=16s)  
+
+
 
 ---
 

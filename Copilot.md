@@ -766,6 +766,8 @@ GitHub Copilot is not an Agent, it is a runtime that hosts:
 
 ### What is Local Foundry?
 
+[Run local AI on any PC or Mac - Microsoft Foundry Local Microsoft Mechanics](https://www.youtube.com/watch?v=qL3HADDI6W4&t=4s)    
+
 Foundry Local is a high-performance, on-device AI runtime stack that brings Microsoft Azure AI Foundry 
 capabilities to client devices (Windows/macOS), enabling developers to run LLMs and SLMs locally 
 without internet. 

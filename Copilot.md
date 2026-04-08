@@ -798,6 +798,8 @@ developers to build and ship in-production AI apps on user devices.
 
 ### What is Ollama?
 
+[Ollama: Start building with open models](https://ollama.com/)  
+
 Ollama is a runtime designed to host LLM; by analogy the GitHub Copilot tool built in VSCode
 or Visual Studio is a runtime to run all that a developer needs to interact with Copilot, etc.
 
@@ -831,6 +833,12 @@ and to connect with frontend interfaces.
 Ollama serves as a local, private, and free alternative to cloud-based LLM services, making it 
 popular for developers, researchers, and users who want to explore AI without incurring API 
 costs or security risks.  
+
+### What is Aider?
+
+[Aider: AI pair programming in your terminal](https://aider.chat/)   
+
+Aider lets you pair program with LLMs to start a new project or build on your existing codebase.
 
 ---
 

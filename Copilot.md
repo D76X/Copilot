@@ -751,18 +751,26 @@ Context7 pulls up-to-date, version-specific documentation and code examples stra
 
 ---
 
+# Code It With AI - Copilot Skills (ep.17)
+
+[Code It With AI - Copilot Skills (ep.17) DevExpress](https://www.youtube.com/watch?v=t1sh2iIJT8w&list=PL8h4jt35t1whFkEryOz94bu2KQPY48HLy&index=9)  
+
+
+
 ---
 
 # AvnDataGenie
 
-[GitHub copilot-sdk](https://github.com/github/copilot-sdk)  
+[GitHub eecopilot-sdk](https://github.com/github/copilot-sdk)  
 [AvnDataGenie](https://github.com/carlfranklin/AvnDataGenie/tree/8372525987671454c7bcac732d31c48bae856b8b)    
 [GitHub: Episode 15 Copilot SDK and AvnDataGenie](https://github.com/Code-it-with-AI/Episode-15)     
 
-
 An OSS system to allow users to query a database using natural language.
 
+[Code It With AI - AvnDataGenie on Ollama (ep.16) DevExpress](https://www.youtube.com/watch?v=SZjU0OfUEwU&list=PL8h4jt35t1whFkEryOz94bu2KQPY48HLy&index=11)  
+
 [Code It With AI - AvnDataGenie Part 3 (ep.15) DevExpress](https://www.youtube.com/watch?v=FAC-MyKXLH8&list=PL8h4jt35t1whFkEryOz94bu2KQPY48HLy&index=11)  
+
 [14-Code It With AI - AvnDataGenie Part 2 (ep.14) DevExpress](https://www.youtube.com/watch?v=HxyN6zUkMaE)  
 
 GitHub Copilot is not an Agent, it is a runtime that hosts:

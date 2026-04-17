@@ -751,6 +751,12 @@ Context7 pulls up-to-date, version-specific documentation and code examples stra
 
 ---
 
+# Code It With AI - Squad: Your Multi-Agent Team (ep.18)
+
+[Code It With AI - Squad: Your Multi-Agent Team (ep.18) DevExpress](https://www.youtube.com/watch?v=Wjnab3S-tYs)  
+
+---
+
 # Code It With AI - Copilot Skills (ep.17)
 
 [Code It With AI - Copilot Skills (ep.17) DevExpress](https://www.youtube.com/watch?v=t1sh2iIJT8w&list=PL8h4jt35t1whFkEryOz94bu2KQPY48HLy&index=9)  

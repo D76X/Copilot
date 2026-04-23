@@ -749,19 +749,32 @@ Context7 pulls up-to-date, version-specific documentation and code examples stra
 [Code-it-with-AI GitHub](https://github.com/Code-it-with-AI)  
 [copilotthatjawn](https://copilotthatjawn.com/)  
 
+
+---
+
+# Code Rush with AI  
+
+[Code It With AI - Do You Really Want to Wait for AI? (ep.20) - DevExpress](https://www.youtube.com/watch?v=hZg_Z6ColFc&list=PL8h4jt35t1whFkEryOz94bu2KQPY48HLy&index=8)  
+
+---
+
+# Updating Copilot CLI
+
+[Code It With AI - Copilot Gotchas (ep.19) DevExpress](https://www.youtube.com/watch?v=IwlLpvEQjS8&t=181s)
+
 ---
 
 # Code It With AI - Squad: Your Multi-Agent Team (ep.18)
 
-[Code It With AI - Squad: Your Multi-Agent Team (ep.18) DevExpress](https://www.youtube.com/watch?v=Wjnab3S-tYs)  
+[Code It With AI - Squad: Your Multi-Agent Team (ep.18) DevExpress](https://www.youtube.com/watch?v=Wjnab3S-tYs)   
+
+[.NET AI Community Standup: Squad: AI agent teams for any project dotnet](https://www.youtube.com/watch?v=nHZC-tl_ado)  
 
 ---
 
 # Code It With AI - Copilot Skills (ep.17)
 
 [Code It With AI - Copilot Skills (ep.17) DevExpress](https://www.youtube.com/watch?v=t1sh2iIJT8w&list=PL8h4jt35t1whFkEryOz94bu2KQPY48HLy&index=9)  
-
-
 
 ---
 

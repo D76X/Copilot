@@ -693,8 +693,6 @@ The GitHub MCP server is already built in to Copilot CLI — you don't need to a
 
 The playwright and filesystem servers from your `.vscode/mcp.json` are the ones you might want to add if you need them in the CLI too.
 
-
-
 ---
 
 [Filesystem MCP Server](https://github.com/modelcontextprotocol/servers/tree/main/src/filesystem)  
@@ -744,172 +742,7 @@ Context7 pulls up-to-date, version-specific documentation and code examples stra
 
 ---
 
-# [Code It With AI - Playlist by DevExpress](https://www.youtube.com/playlist?list=PL8h4jt35t1whFkEryOz94bu2KQPY48HLy)  
-
-[Code-it-with-AI GitHub](https://github.com/Code-it-with-AI)  
-[copilotthatjawn](https://copilotthatjawn.com/)  
-
-
----
-
-# Code Rush with AI  
-
-[Code It With AI - Do You Really Want to Wait for AI? (ep.20) - DevExpress](https://www.youtube.com/watch?v=hZg_Z6ColFc&list=PL8h4jt35t1whFkEryOz94bu2KQPY48HLy&index=8)  
-
----
-
-# Updating Copilot CLI
-
-[Code It With AI - Copilot Gotchas (ep.19) DevExpress](https://www.youtube.com/watch?v=IwlLpvEQjS8&t=181s)
-
----
-
-# Code It With AI - Squad: Your Multi-Agent Team (ep.18)
-
-[Code It With AI - Squad: Your Multi-Agent Team (ep.18) DevExpress](https://www.youtube.com/watch?v=Wjnab3S-tYs)   
-
-[.NET AI Community Standup: Squad: AI agent teams for any project dotnet](https://www.youtube.com/watch?v=nHZC-tl_ado)  
-
----
-
-# Code It With AI - Copilot Skills (ep.17)
-
-[Code It With AI - Copilot Skills (ep.17) DevExpress](https://www.youtube.com/watch?v=t1sh2iIJT8w&list=PL8h4jt35t1whFkEryOz94bu2KQPY48HLy&index=9)  
-
----
-
-# AvnDataGenie
-
-[GitHub eecopilot-sdk](https://github.com/github/copilot-sdk)  
-[AvnDataGenie](https://github.com/carlfranklin/AvnDataGenie/tree/8372525987671454c7bcac732d31c48bae856b8b)    
-[GitHub: Episode 15 Copilot SDK and AvnDataGenie](https://github.com/Code-it-with-AI/Episode-15)     
-
-An OSS system to allow users to query a database using natural language.
-
-[Code It With AI - AvnDataGenie on Ollama (ep.16) DevExpress](https://www.youtube.com/watch?v=SZjU0OfUEwU&list=PL8h4jt35t1whFkEryOz94bu2KQPY48HLy&index=11)  
-
-[Code It With AI - AvnDataGenie Part 3 (ep.15) DevExpress](https://www.youtube.com/watch?v=FAC-MyKXLH8&list=PL8h4jt35t1whFkEryOz94bu2KQPY48HLy&index=11)  
-
-[14-Code It With AI - AvnDataGenie Part 2 (ep.14) DevExpress](https://www.youtube.com/watch?v=HxyN6zUkMaE)  
-
-GitHub Copilot is not an Agent, it is a runtime that hosts:
-
-- Agents
-- MCP Servers
-
----
-
-## Local LLM Runtime
-
-[Code It With AI - Ollama, a Local LLM Runtime (ep.12) DevExpress](https://www.youtube.com/watch?v=AvIi7lFuV-c&list=PL8h4jt35t1whFkEryOz94bu2KQPY48HLy&index=12)  
-
-### What is Local Foundry?
-
-[Run local AI on any PC or Mac - Microsoft Foundry Local Microsoft Mechanics](https://www.youtube.com/watch?v=qL3HADDI6W4&t=4s)    
-
-Foundry Local is a high-performance, on-device AI runtime stack that brings Microsoft Azure AI Foundry 
-capabilities to client devices (Windows/macOS), enabling developers to run LLMs and SLMs locally 
-without internet. 
-
-It offers hardware-accelerated inference (CPU/GPU/NPU) for, low-latency, private, and offline AI 
-applications, supporting ONNX models with OpenAI-compatible APIs.
-
-> Key Features and Benefits
-
-- Edge-Ready/Offline: 
-Operates fully on-device without cloud dependencies, ensuring data privacy.
-
-- Hardware Acceleration: 
-Optimized for diverse hardware, including Intel NPUs.
-
-- Model Interoperability: 
-Uses the ONNX (Open Neural Network Exchange) ecosystem, allowing models from frameworks like PyTorch or TensorFlow.
-
-- Developer Friendly: 
-Provides SDKs in Python, JavaScript, C#, and Rust, with an OpenAI-compatible API for easy integration.
-
-- Cost-Effective: 
-Eliminates cloud inference fees.
-
-Foundry Local is designed for applications needing to securely 
-handle data on-site while utilizing powerful AI models, allowing 
-developers to build and ship in-production AI apps on user devices.
-
-[What is Foundry Local?](https://learn.microsoft.com/en-us/azure/foundry-local/what-is-foundry-local)   
-
-### What is Ollama?
-
-[Ollama: Start building with open models](https://ollama.com/)  
-
-Ollama is a runtime designed to host LLM; by analogy the GitHub Copilot tool built in VSCode
-or Visual Studio is a runtime to run all that a developer needs to interact with Copilot, etc.
-
-Ollama is an open-source tool that enables running large language models (LLMs) locally 
-on your own machine—Windows, macOS, or Linux—without needing the internet or cloud services. 
-It simplifies the process of downloading, managing, and running models, offering a lightweight 
-command-line interface to interact with models like Llama 3, Mistral, and Qwen.
-
-> Key features and benefits of Ollama include:
-
-- Data Privacy: 
-Because models run locally on your hardware, your data remains secure 
-and does not leave your machine.
-
-- Ease of Use: 
-It acts like a package manager for AI, allowing you to run models with a simple command, 
-such as ollama run llama3.Model 
-
-- Variety: 
-It supports a wide range of open-source models, including those optimized for text generation 
-(language models), multimodal tasks (analyzing images), and specialized tools.
-
-- Efficiency: 
-It leverages quantized (compressed) models, allowing them to run efficiently on personal computers, 
-even without high-end GPUs, by using CPU/RAM or available hardware acceleration.
-
-- Integration: 
-It provides a built-in API, making it easy to integrate with other programs (like Python or Node.js) 
-and to connect with frontend interfaces.
-
-Ollama serves as a local, private, and free alternative to cloud-based LLM services, making it 
-popular for developers, researchers, and users who want to explore AI without incurring API 
-costs or security risks.  
-
-### What is Aider?
-
-[Aider: AI pair programming in your terminal](https://aider.chat/)   
-
-Aider lets you pair program with LLMs to start a new project or build on your existing codebase.
-
----
-
-## Data Analysis on a DB with Copilot CLI
-
-[Code It With AI - Data Analysis with Copilot CLI (ep.11)](https://www.youtube.com/watch?v=VV6NvMA-tns&list=PL8h4jt35t1whFkEryOz94bu2KQPY48HLy&index=13&t=16s)  
-
-
-
----
-
-## 10 Building Custom Agents
-
-[10-Code It With AI - Building Custom Agents (ep.10)](https://www.youtube.com/watch?v=3xoxuSNX2zw)  
-
----
-
-## 09 Build your first MCP Server with C#
-
-[Code It With AI - Build your first MCP Server with C# (ep.9)](https://www.youtube.com/watch?v=vG__NyFvua8&t=4s)   
-
----
-
-## 08 MCP Servers in more detail
-
-[Code It With AI - Digging Deeper into MCPs (ep.8) DevExpress](https://www.youtube.com/watch?v=GjnCOFEJRvA)  
-
----
-
-## 07 GitHub Copilot CLI
+## GitHub Copilot CLI
 
 [Code It With AI - Commanding the CLI with Copilot (ep.7) DevExpress](https://www.youtube.com/watch?v=gxEaAocq6RQ)  
 
@@ -1065,6 +898,7 @@ Multiple topics	Use /rename per topic	Easy to resume right session
 ## Integration with Azure DevOps
 
 [MCP Server for Azure DevOps](https://learn.microsoft.com/en-us/azure/devops/release-notes/roadmap/2025/general-mcp-server-for-ado)   
+
 [microsoft/azure-devops-mcp](https://github.com/microsoft/azure-devops-mcp)   
 
 ---

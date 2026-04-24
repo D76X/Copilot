@@ -428,6 +428,20 @@ copilot
 # Install a plugin from the marketplace
 ```
 
+## The Work IQ Copilot CLI Plugin
+
+[Getting Started with GitHub Copilot CLI and Work IQ - John Saville](https://www.youtube.com/watch?v=tQlNq8bH674&t=621s)  
+
+[Microsoft Work IQ CLI (Public Preview)](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/workiq-overview)  
+
+
+[What is the Work IQ CLI?](https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/workiq-overview#what-is-the-work-iq-cli)
+
+The Work IQ CLI bridges the gap between AI coding assistants and your Microsoft 365 data. 
+By exposing your Microsoft 365 Copilot data through the **Model Context Protocol**, 
+Work IQ enables AI assistants in your development environment to access and reason over 
+your workplace information.
+
 ---
 
 > CHAT PARTICIPANTS
@@ -900,43 +914,6 @@ Multiple topics	Use /rename per topic	Easy to resume right session
 [MCP Server for Azure DevOps](https://learn.microsoft.com/en-us/azure/devops/release-notes/roadmap/2025/general-mcp-server-for-ado)   
 
 [microsoft/azure-devops-mcp](https://github.com/microsoft/azure-devops-mcp)   
-
----
-
-## 06 Code It With AI - Text to T-SQL
-
-[Code It With AI - Text to T-SQL DevExpress (ep.6)](https://www.youtube.com/watch?v=2By_ARHx904&t=922s)  
-
----
-
-## 05 Turn a paragraph of text into a schedule
-
-[Code It With AI - .NET + AI: Parse Natural Language into Calendar Events (ep.5) DevExpress](https://www.youtube.com/watch?v=WcR6bRnoaxA&t=15s)  
-
----
-
-## 04 Enable Models In GitHub
-
-[Code It With AI - Build Your First .NET AI App (Using GitHub + GPT-5 Mini) (Ep. 4) DevExpress](https://www.youtube.com/watch?v=9F7muWd4sow)  
-
----
-
-## 03 Integrate AI Workflow with GitHub Actions 
-
-[Code It With AI - Build & Test .NET Apps with GitHub Copilot (Ep. 3) DevExpress](https://www.youtube.com/watch?v=1eCrAsrOdoE&list=PL8h4jt35t1whFkEryOz94bu2KQPY48HLy&index=14)  
-
----
-
-## 02 Use Custom Instraction Files & Prompt Files to specialize workflow and enforce coding standards and provide Agent personality
-
-[Code It With AI - Mastering Copilot Prompts & Instructions in .NET (ep.2) DevExpress](https://www.youtube.com/watch?v=TCPeccH5M3g&t=644s) 
-
----
-
-## 01 Generate Documentation
-
-[01-Code It With AI - Generating Documentation (ep.1)](https://www.youtube.com/watch?v=RewtTswNdHY&list=PL8h4jt35t1whFkEryOz94bu2KQPY48HLy&index=14)  
-[01-Code-it-with-AI GitHub Episode 01](https://github.com/Code-it-with-AI/Episode-01)  
 
 ---
 

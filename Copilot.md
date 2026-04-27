@@ -771,6 +771,8 @@ Context7 pulls up-to-date, version-specific documentation and code examples stra
 [GitHub Copilot CLI command reference](https://docs.github.com/en/copilot/reference/cli-command-reference)   
 
 ```
+# Non Interactive Mode for a single question: no need to use `copilot --resume`, `copilot --continue`
+copilot -p "what is the capital city of France?"
 
 # Essential Slash Commands
 /help	Show all available commands	When you forget a command

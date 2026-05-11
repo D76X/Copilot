@@ -1,7 +1,5 @@
 # Copilot
 
-
-
 # Copilot in VS Code
 
 [GitHub Copilot Fundamentals: AI Agents by Aaron Steward](https://app.pluralsight.com/ilx/video-courses/63ef6a3d-992d-4586-8c0c-760479bbad95/c1105e40-64c1-41c6-9dba-fd28f80a23d9/f49a1885-4902-41a8-8336-210eb6235171)   

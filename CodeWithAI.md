@@ -7,7 +7,9 @@
 
 ## Use an Agent in your own application
 
-[Code It With AI - Use an Agent in Your App (ep.21) DevExpress](https://www.youtube.com/watch?v=HPj67fBy-1Y&list=PL8h4jt35t1whFkEryOz94bu2KQPY48HLy&index=8&t=3s)  
+[Code It With AI - Use an Agent in Your App (ep.21) DevExpress](https://www.youtube.com/watch?v=HPj67fBy-1Y&list=PL8h4jt35t1whFkEryOz94bu2KQPY48HLy&index=8&t=3s)   
+
+[Microsoft Agent Framework](https://learn.microsoft.com/en-us/agent-framework/overview/?pivots=programming-language-csharp)   
 
 ---
 

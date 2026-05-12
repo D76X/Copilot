@@ -2,7 +2,7 @@
 
 The core difference is that open-source models provide full transparency, including training data, code, and weights, while open-weight models only provide the final trained parameters (weights) without disclosing how they were trained. Open weights allow you to run and tune models, but open source allows full auditing and scientific reproduction.
 
-## Open Weight Models (e.g., Llama 3, Mistral, Qwen)
+## Open Weight Models (e.g., Llama 3, Mistral, Qwen) [Edge Technology]
 
 - What you get: 
 The downloadable, executable weights (parameters) that make the model work.
@@ -16,7 +16,7 @@ The training code, the dataset, and the specific training process.
 - Best for: 
 Rapid deployment of powerful models and private, local hosting.
 
-## Open Source Models (e.g., BLOOM, OLMo
+## Open Source Models (e.g., BLOOM, OLMo)
 
 - )What you get: 
 Weights plus training code, dataset information, and architecture details.

@@ -5,6 +5,18 @@
 
 ---
 
+# Skilling Up Agents
+
+[Code It With AI - Skilling Up Agents (ep.22) DevExpress](https://www.youtube.com/watch?v=5RkKCEhkHdM)  
+
+[awesome-copilot: Agent Skills](https://github.com/github/awesome-copilot/blob/main/docs/README.skills.md)   
+
+[Microsoft Curated Curated Skill Bundles](https://github.com/MicrosoftDocs/agent-skills/blob/main/docs/BUNDLES.md)  
+
+[Azure Agent Skills](https://github.com/MicrosoftDocs/Agent-Skills/tree/main)   
+
+---
+
 ## Use an Agent in your own application
 
 [Code It With AI - Use an Agent in Your App (ep.21) DevExpress](https://www.youtube.com/watch?v=HPj67fBy-1Y&list=PL8h4jt35t1whFkEryOz94bu2KQPY48HLy&index=8&t=3s)   

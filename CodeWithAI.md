@@ -41,7 +41,23 @@
 
 [Code It With AI - Squad: Your Multi-Agent Team (ep.18) DevExpress](https://www.youtube.com/watch?v=Wjnab3S-tYs)   
 
+## Squad
+
+[Copilot Squad replaces entire dev teams Ed Andersen](https://www.youtube.com/watch?v=KhESvfjxgHo)    
+
 [.NET AI Community Standup: Squad: AI agent teams for any project dotnet](https://www.youtube.com/watch?v=nHZC-tl_ado)  
+
+
+## GitHub Fleet Mode
+
+[GitHub Fleet](https://docs.github.com/en/copilot/concepts/agents/copilot-cli/fleet)   
+
+The `/fleet` slash command lets Copilot CLI break down a complex request into smaller 
+tasks and run them in parallel, maximizing efficiency and throughput.
+
+## Squad vs Fleet Mode
+
+[Research: Should Squad use /fleet instead of task/delegate for agent spawning? #24](https://github.com/bradygaster/squad/issues/24)  
 
 ---
 

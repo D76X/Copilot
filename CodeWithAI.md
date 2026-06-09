@@ -7,6 +7,8 @@
 
 # Skilling Up Agents
 
+[Code It With AI - Sensei for Skills (ep.23)](https://www.youtube.com/watch?v=SsSblqw68Ew&list=PL8h4jt35t1whFkEryOz94bu2KQPY48HLy&index=11)  
+
 [Code It With AI - Skilling Up Agents (ep.22) DevExpress](https://www.youtube.com/watch?v=5RkKCEhkHdM)  
 
 [awesome-copilot: Agent Skills](https://github.com/github/awesome-copilot/blob/main/docs/README.skills.md)   

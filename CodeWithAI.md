@@ -8,6 +8,7 @@
 # Skilling Up Agents
 
 [Code It With AI - Sensei for Skills (ep.23)](https://www.youtube.com/watch?v=SsSblqw68Ew&list=PL8h4jt35t1whFkEryOz94bu2KQPY48HLy&index=11)  
+[GitHub Sensei - Sensei automates the improvement of Agent Skills](https://github.com/spboyer/sensei)  
 
 [Code It With AI - Skilling Up Agents (ep.22) DevExpress](https://www.youtube.com/watch?v=5RkKCEhkHdM)  
 

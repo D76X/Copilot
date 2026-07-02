@@ -17,6 +17,8 @@
 [Gemma 4 12B Is INSANE – Is THIS the BEST Local Coding Model Yet? Bijan Bowen](https://www.youtube.com/watch?v=LJIfSr2fVTc&t=1304s)  
 [Gemma 4 makes a surprisingly good local Copilot Telusko](https://www.youtube.com/watch?v=CyiqH3SoqBM)  
 
+[Gemma 4 Just Got Way More Powerful with Open WebUI Teacher's Tech](https://www.youtube.com/watch?v=aQ1rblXB91U&t=20s)
+
 ---
 
 # FAQ

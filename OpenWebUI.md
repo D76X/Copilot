@@ -1,5 +1,6 @@
 # Open Webui
 
+[Open WebUI Documentation](https://docs.openwebui.com/)  
 [open-webui](https://github.com/open-webui) 
 
 ---

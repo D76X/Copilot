@@ -4,13 +4,31 @@
 
 ## How can I use a local model when I use GitHub Copilot CLI? 
 
-COPILOT_PROVIDER_BASE_URL
+[Using your own LLM models in GitHub Copilot CLI](https://docs.github.com/en/copilot/how-tos/copilot-cli/customize-copilot/use-byok-models#configuring-your-provider)  
+
+[GitHub Copilot > Configuring your provider](https://docs.github.com/en/copilot/how-tos/copilot-cli/customize-copilot/use-byok-models#configuring-your-provider)  
+
+| Environment Variable | Required / Optional | Meaning |
+| :--- | :--- | :--- |
+| `COPILOT_PROVIDER_BASE_URL` | Required | The base URL of your model provider's API endpoint. |
+
+
 
 COPILOT_MODEL
 
 COPILOT_PROVIDER_TYPE
 
 COPILOT_PROVIDER_API_KEY
+
+
+
+
+| Environment Variable | Required / Optional | Meaning |
+| :--- | :--- | :--- |
+| `OPENAI_API_KEY` | Required | The API key for OpenAI. |
+| `LLM_MODEL` | Optional | Specifies the model to use (e.g., gpt-4, claude). Defaults to `gpt-3.5-turbo`. |
+| `ADMIN_EMAIL` | Optional | Email address for administrative notifications. |
+| `CUSTOM_CONFIG_PATH` | Optional | Path to a custom YAML configuration file for advanced settings. |
 
 ### Videos
 

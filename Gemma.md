@@ -23,6 +23,21 @@
 
 # FAQ
 
+## What is the context windows for Gemma 4?
+
+[Gemma 4 model overview](https://ai.google.dev/gemma/docs/core)  
+
+Gemma 4 released with text, audio and image input and long up to 256K context window,
+and maintains multilingual support in over 140 languages.
+
+The small models feature a 128K context window, while the medium models support 256K.
+
+> Long Context 
+
+Context windows of up to 128K tokens (E2B/E4B) and 256K tokens (12B/26B A4B/31B).
+
+---
+
 ## Does open webui use ollama?
 
 Yes, Open WebUI uses Ollama as its primary local backend to run large language models.However, it is not strictly required.Native Integration: Open WebUI is designed to natively connect with Ollama, allowing you to manage models directly from the UI, pull new ones, and view GPU performance.No Ollama Required: You can use Open WebUI without Ollama. It also supports other OpenAI-compatible APIs (like Anthropic, OpenAI, or LocalAI). If you run it via Docker, you can disable the Ollama requirement entirely by setting the environment variable -e ENABLE_OLLAMA_API=False.

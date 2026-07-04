@@ -17,7 +17,10 @@
 [Gemma 4 12B Is INSANE – Is THIS the BEST Local Coding Model Yet? Bijan Bowen](https://www.youtube.com/watch?v=LJIfSr2fVTc&t=1304s)  
 [Gemma 4 makes a surprisingly good local Copilot Telusko](https://www.youtube.com/watch?v=CyiqH3SoqBM)  
 
-[Gemma 4 Just Got Way More Powerful with Open WebUI Teacher's Tech](https://www.youtube.com/watch?v=aQ1rblXB91U&t=20s)
+[Master Gemma 4 in 20 Minutes  Ali H. Salem](https://www.youtube.com/watch?v=yJr_kTCOkFo)  
+[Google Gemma 4 Tutorial - Run AI Locally for Free Teacher's Tech](https://www.youtube.com/watch?v=7LEvSOiTWZk)  
+[Gemma 4 Just Got Way More Powerful with Open WebUI Teacher's Tech](https://www.youtube.com/watch?v=aQ1rblXB91U&t=20s)   
+[Why Google Just Gave Away Gemma 4 for Free Ali H. Salem](https://www.youtube.com/watch?v=sXgZhGzqPmU)   
 
 ---
 

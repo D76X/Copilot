@@ -14,6 +14,26 @@ All Ollama commands are of the type `ollama [cmd]`.
 
 ---
 
+## What is `http://localhost:11434` ?
+
+`http://localhost:11434` is the default address and port for the Ollama API server. 
+It allows developers and hobbyists to run, manage, and interact with open-source Large Language Models 
+(LLMs)—such as Llama 3 or Mistral—directly on their local machine.
+
+- Common Applications
+
+Since Ollama acts as a backend engine, you typically connect other front-end software to this address
+so you can have a ChatGPT-like interface over your private models. 
+
+Common tools that link to this port include:
+
+- [Open WebUI](https://openwebui.com/)  
+- [LobeChat](https://app.lobehub.com/)  
+- [AnythingLLM](https://anythingllm.com/)  
+
+
+---
+
 ## Ollama exceeds the available context size (4096 tokens)
 
 > Prompt

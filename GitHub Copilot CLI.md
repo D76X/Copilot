@@ -9,7 +9,20 @@ Use `copilot` in front of all the follwoing.
 | login             | Init      | Authenticate with Copilot via the OAuth device flow. | `copilot login` |  
 | mcp               | Conf      | Manage MCP server configurations from the command line. | `copilot mcp` |  
 | help providers    | Help      | show the help for the `providers` command | `copilot help providers` |  
+| usage             | Usage     | Display session usage metrics and statistics, including per-model token totals. |
+| compact           | Usage     | Compaction is the process that allows GitHub Copilot CLI to support long-running sessions without hitting the limits of the context window. |
 
+---
+
+## Context Windows Usage and Optimization
+
+[Compaction](https://docs.github.com/en/copilot/concepts/agents/copilot-cli/context-management#compaction)   
+[Checking your context usage](https://docs.github.com/en/copilot/concepts/agents/copilot-cli/context-management#checking-your-context-usage)   
+
+| Command           | Effect    | Description | Notes |
+| :---------------- | :-------: | ----------------------------------------------: | ----: |
+| usage             | Usage     | Display session usage metrics and statistics, including per-model token totals. |
+| compact           | Usage     | Compaction is the process that allows GitHub Copilot CLI to support long-running sessions without hitting the limits of the context window. |
 
 ---
 

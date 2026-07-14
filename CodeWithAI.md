@@ -5,7 +5,14 @@
 
 ---
 
+[Copilot Writes Tests! (ep.25) DevExpress](https://www.youtube.com/watch?v=n13qow2tLv4&list=PL8h4jt35t1whFkEryOz94bu2KQPY48HLy&index=13&t=8s)  
+[Generate and run unit tests using GitHub Copilot testing for .NET](https://learn.microsoft.com/en-us/visualstudio/test/unit-testing-with-github-copilot-test-dotnet?view=visualstudio)    
+
+---
+
 # Skilling Up Agents
+
+[Code It With AI - Multi-Step Workflows (ep.24)](https://www.youtube.com/watch?v=pFP5doudWKo)   
 
 [Code It With AI - Sensei for Skills (ep.23)](https://www.youtube.com/watch?v=SsSblqw68Ew&list=PL8h4jt35t1whFkEryOz94bu2KQPY48HLy&index=11)  
 [GitHub Sensei - Sensei automates the improvement of Agent Skills](https://github.com/spboyer/sensei)  

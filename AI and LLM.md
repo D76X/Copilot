@@ -45,3 +45,13 @@ Many models commonly called "open-source" are actually "open-weight," as compani
 Refs:
 
 [Master Gemma 4 in 20 Minutes Ali H. Salem ](https://www.youtube.com/watch?v=yJr_kTCOkFo&t=12s)  
+
+---
+
+# Tokens, Tokenization and Tokenizers
+
+[Tokenomics | The new AI currency & your options explained Microsoft Mechanics](https://www.youtube.com/watch?v=mB0IyELzjRg)  
+
+[tiktoken - GitHub](https://github.com/openai/tiktoken)  
+
+---

@@ -1,7 +1,21 @@
-
 # Microsoft Foundry
 
+---
+
+# Foundry Local
+
 [Run local AI on any PC or Mac - Microsoft Foundry Local Microsoft Mechanics](https://www.youtube.com/watch?v=qL3HADDI6W4&t=163s) 
+
+[GitHub: foundry-local-on-windowsserver-samples](https://github.com/microsoft/foundry-local-on-windowsserver-samples)  
+
+[What is Foundry Local?](https://learn.microsoft.com/en-us/azure/foundry-local/what-is-foundry-local)    
+
+Foundry Local is an end-to-end local AI solution for shipping applications that run entirely on the user's device. 
+It provides all the following in a lightweight package: 
+
+1. an easy-to-use `SDK (C#, JavaScript, Rust, and Python)`
+2. a curated catalog of optimized models
+3. automatic hardware acceleration.
 
 ---
 

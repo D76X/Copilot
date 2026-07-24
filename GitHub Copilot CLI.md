@@ -14,6 +14,17 @@ Use `copilot` in front of all the follwoing.
 
 ---
 
+[Slash commands in the interactive interface](https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference#slash-commands-in-the-interactive-interface)  
+
+| Command           | Effect    | Description | Notes |
+| :---------------- | :-------: | ----------------------------------------------: | ----: |
+| /research TOPIC   | ...       | Run a deep research investigation using GitHub search and web sources. 
+See Researching with GitHub Copilot CLI.. | it generates a report |  
+
+
+
+---
+
 ## Context Windows Usage and Optimization
 
 [Compaction](https://docs.github.com/en/copilot/concepts/agents/copilot-cli/context-management#compaction)   

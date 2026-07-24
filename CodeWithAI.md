@@ -5,6 +5,22 @@
 
 ---
 
+# Doing research with Copilot
+
+[Copilot Does Research (ep.26) DevExpress](https://www.youtube.com/watch?v=tQZqNZ47TEs&list=PL8h4jt35t1whFkEryOz94bu2KQPY48HLy&index=14&t=1s)  
+
+[Slash commands in the interactive interface](https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference#slash-commands-in-the-interactive-interface)  
+
+| Command           | Effect    | Description | Notes |
+| :---------------- | :-------: | ----------------------------------------------: | ----: |
+| /research TOPIC   | ...       | Run a deep research investigation using GitHub search and web sources. 
+See Researching with GitHub Copilot CLI.. | it generates a report |  
+
+
+---
+
+# Writing Test with Copilot
+
 [Copilot Writes Tests! (ep.25) DevExpress](https://www.youtube.com/watch?v=n13qow2tLv4&list=PL8h4jt35t1whFkEryOz94bu2KQPY48HLy&index=13&t=8s)  
 [Generate and run unit tests using GitHub Copilot testing for .NET](https://learn.microsoft.com/en-us/visualstudio/test/unit-testing-with-github-copilot-test-dotnet?view=visualstudio)    
 

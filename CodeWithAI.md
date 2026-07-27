@@ -3,6 +3,13 @@
 [Code-it-with-AI GitHub](https://github.com/Code-it-with-AI)  
 [copilotthatjawn](https://copilotthatjawn.com/)  
 
+
+---
+
+# Copilot Local
+
+[Copilot Goes Local (ep.27) DevExpress](https://www.youtube.com/watch?v=x7igjIR-Oh0&list=PL8h4jt35t1whFkEryOz94bu2KQPY48HLy&index=13)  
+
 ---
 
 # Doing research with Copilot
@@ -14,8 +21,7 @@
 | Command           | Effect    | Description | Notes |
 | :---------------- | :-------: | ----------------------------------------------: | ----: |
 | /research TOPIC   | ...       | Run a deep research investigation using GitHub search and web sources. 
-See Researching with GitHub Copilot CLI.. | it generates a report |  
-
+See Researching with GitHub Copilot CLI.. | it generates a report. It can be used beside any MCP servers. |  
 
 ---
 

@@ -19,9 +19,7 @@ Use `copilot` in front of all the follwoing.
 | Command           | Effect    | Description | Notes |
 | :---------------- | :-------: | ----------------------------------------------: | ----: |
 | /research TOPIC   | ...       | Run a deep research investigation using GitHub search and web sources. 
-See Researching with GitHub Copilot CLI.. | it generates a report |  
-
-
+See Researching with GitHub Copilot CLI.. | it generates a report. It can be used beside any MCP servers. |  
 
 ---
 

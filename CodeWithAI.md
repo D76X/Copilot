@@ -158,6 +158,8 @@ developers to build and ship in-production AI apps on user devices.
 
 [What is Foundry Local?](https://learn.microsoft.com/en-us/azure/foundry-local/what-is-foundry-local)   
 
+---
+
 ### What is Ollama?
 
 [Ollama: Start building with open models](https://ollama.com/)  
@@ -195,6 +197,8 @@ and to connect with frontend interfaces.
 Ollama serves as a local, private, and free alternative to cloud-based LLM services, making it 
 popular for developers, researchers, and users who want to explore AI without incurring API 
 costs or security risks.  
+
+---
 
 ### What is Aider?
 

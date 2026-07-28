@@ -14,6 +14,19 @@ All Ollama commands are of the type `ollama [cmd]`.
 
 ---
 
+## [Ollama FAQ](https://docs.ollama.com/faq)
+
+### How can I upgrade Ollama?
+
+Ollama on macOS and Windows will automatically download updates. 
+Click on the taskbar or menubar item and then click `Restart to update` to apply the update. Updates can also be installed by downloading the latest version manually.
+
+On Linux, re-run the install script:
+
+`curl -fsSL https://ollama.com/install.sh | sh`
+
+---
+
 ## What is `http://localhost:11434` ?
 
 `http://localhost:11434` is the default address and port for the Ollama API server. 

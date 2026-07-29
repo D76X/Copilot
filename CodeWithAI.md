@@ -3,6 +3,13 @@
 [Code-it-with-AI GitHub](https://github.com/Code-it-with-AI)  
 [copilotthatjawn](https://copilotthatjawn.com/)  
 
+---
+
+# SquadDash
+
+[SquadDash for Windows -- GUI for Squad (ep.28) DevExpress](https://www.youtube.com/watch?v=POZsbwTYgQw&list=PL8h4jt35t1whFkEryOz94bu2KQPY48HLy&index=12)  
+
+[SquadDash GitHub](https://github.com/MillerMark/squad-dash)  
 
 ---
 

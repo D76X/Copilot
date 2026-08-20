@@ -5,6 +5,18 @@
 
 ---
 
+# Local Models for coding tasks
+
+[Code it with AI - Language Model Roundup 1 (ep.29) DevExpress](https://www.youtube.com/watch?v=MROj19EZ7I0&t=385s)  
+
+1. 
+2. Gemma4           >> OKish
+3. Granite4.1:3b    >> BAD
+4. laguna-xs.2      >> BAD
+
+
+---
+
 # SquadDash
 
 [SquadDash for Windows -- GUI for Squad (ep.28) DevExpress](https://www.youtube.com/watch?v=POZsbwTYgQw&list=PL8h4jt35t1whFkEryOz94bu2KQPY48HLy&index=12)  

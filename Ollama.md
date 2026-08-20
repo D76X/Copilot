@@ -1,6 +1,9 @@
 # Ollama
 
-[Ollama CLI Reference](https://docs.ollama.com/cli)  
+[Ollama CLI Reference](https://docs.ollama.com/cli) 
+
+[library of models - ollama](https://ollama.com/library)  
+[gemma4 tags - ollama](https://ollama.com/library/gemma4/tags)   
 
 All Ollama commands are of the type `ollama [cmd]`.
 
@@ -14,7 +17,24 @@ All Ollama commands are of the type `ollama [cmd]`.
 
 ---
 
+[Ollama Tutorial: Run AI Models on Your Own Computer Teacher's Tech](https://www.youtube.com/watch?v=onrvYqir_mQ)   
+
+---
+
 ## [Ollama FAQ](https://docs.ollama.com/faq)
+
+---
+
+### How can I start a local model with Ollama?
+
+```
+ollama run gemma4
+ollama launch claude
+ollama launch chatgpt
+...
+```
+
+---
 
 ### How can I upgrade Ollama?
 

@@ -200,7 +200,7 @@ Use the refactoring agent to refactor this code block
 # Example 3 ** This is the most flexible option!
 Use the refactoring agent to refactor this code block AND the testing agent to write tests for the class myclass.cs
 
-# Example 4: pick a single agent from teh list
+# Example 4: pick a single agent from the list
 /agent
 
 ```

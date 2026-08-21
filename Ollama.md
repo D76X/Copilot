@@ -9,11 +9,15 @@ All Ollama commands are of the type `ollama [cmd]`.
 
 | Shortcut     | Effect | Description | Notes |
 | :----------- | :-------: | :-----------------------------------------------------: | ----: |
+| ollama       | Operation  | **EXPLAINED IN MORE DETAILS BELOW** | |
 | ls           | Query      | List Models | |
 | ps           | Query      | List running Models | |
+| rm           | Query      | Remove a local model by name | |
 | serve        | Operation  | Start Ollama | |
 | run gemma4   | Operation  | Start Gemma 4 in Ollama | |
 | stop gemma4  | Operation  | Stop Gemma 4 in Ollama | |
+| bye          | Operation  | Exit Ollama Chat | |
+
 
 ---
 

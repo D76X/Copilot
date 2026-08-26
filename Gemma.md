@@ -1,11 +1,31 @@
 # Gemma 
 
+Gemma4 can be used as a local model in a few diffent ways.
+
+---
+
+##  Use Gemma4 through Open WebUI
+
 - 01 Start gemma4 local model with Ollama: `ollama run gemma4`
+- 02 Start the Open-WebUI container in Docker and open it @ http://localhost:3000/
+- 03 [How to Enable Web Search in Open WebUI Professor Patterns](https://www.youtube.com/watch?v=fwscnJu_Md0)  
 
-- 02 Start the Open-WebUI container in Docker
+Step 03 enables `Open WebUI` to use the `Web Search` feature through a 
+search engine service that you can choose and set up.
 
-- 03 
+---
 
+##  Use Gemma4 through Copilot CLI
+
+In a terminal, i.e. a Visual Studio Code terminal use the following
+to start a session with the local model gemma4
+
+```
+$env:COPILOT_PROVIDER_BASE_URL = "http://localhost:11434/v1"
+$env:COPILOT_MODEL = "gemma4:latest"
+$env:COPILOT_OFFLINE = "true"
+copilot
+```
 
 ---
 
@@ -38,6 +58,256 @@
 ---
 
 # FAQ
+
+## How can I allow my local gemma4 model to use the Internet from within GitHub Copilot CLI?
+
+To give your local Gemma 4 model internet access when using it inside the GitHub Copilot CLI, 
+**you need to configure two separate components**: 
+
+- allowing the local model to make external web calls via tool calling, and 
+- preventing the Copilot CLI from enforcing offline mode
+
+> Step 1: Ensure `COPILOT_OFFLINE` is Disabled
+
+When running local LLM providers (like Ollama or LM Studio) with Copilot CLI, 
+the CLI is often executed with `COPILOT_OFFLINE="true"`. Ensure this variable is not set so 
+the CLI doesn't block out-of-band requests or tool executions.  
+
+Make sure your shell profile does not set: `export COPILOT_OFFLINE=false  # or leave it unset entirely`
+
+> Step 2: Configure Web Search / Execution Tools for the Local Model
+
+Local models (like Gemma 4 via Ollama or LM Studio) do not natively "browse" the web 
+unless given tools (function calls) to execute commands. 
+
+Copilot CLI uses system execution tools to fetch external data (e.g., curl, wget, or terminal web search wrappers).  
+
+1. Verify Tool Calling Support:
+
+Gemma 4 models (such as gemma-4-e2b or larger) support function/tool calling. 
+Ensure your local provider exposes an OpenAI-compatible endpoint with function 
+calling enabled:  
+
+- LM Studio: Load Gemma 4 and ensure Max Concurrent Predictions is set appropriately (often set to 1 for local stability).  
+- Ollama: Serve Gemma 4 using `ollama run gemma4` or `ollama serve`.
+
+2. Configure Copilot CLI Environment Variables:
+Point Copilot CLI to your local endpoint:  
+
+```
+export COPILOT_PROVIDER_BASE_URL="http://localhost:1234/v1" # or http://localhost:11434/v1 for Ollama
+export COPILOT_PROVIDER_TYPE="openai"
+export COPILOT_MODEL="google/gemma-4-e2b" # Or your local gemma tag
+```
+
+> Step 3: Run Copilot CLI with Tool Permissions Enabled
+
+When using local models, Copilot CLI relies on shell tool invocations (like curl, powershell, or bash) 
+to pull live data from the web.  
+
+Launch the Copilot CLI interactively without restricting local executions:  
+`copilot --yolo --stream on`
+
+(The `--yolo` flag auto-approves CLI execution tools without prompting for every network/terminal call).
+
+> Step 4: Instruct Gemma 4 to Use Terminal Tools for Web Data
+
+Since local models rely strictly on context and tool parameters, explicitly prompt Gemma 4 
+to fetch the target URL or query via terminal tools:  
+
+```
+copilot "Use curl to fetch the latest release notes from https://api.github.com/repos/cli/cli/releases/latest and summarize them."
+```
+
+### Common Troubleshooting
+
+- Model attempt fails on tool formatting: 
+
+Local models occasionally format JSON tool calls incorrectly. If Gemma 4 fails to format tool calls, 
+use a larger quantization variant (e.g., gemma4:26b instead of smaller sub-4B parameters).  
+
+- Context window overflow: 
+Ensure you expand the token limit for local web responses by setting:
+`export COPILOT_PROVIDER_MAX_PROMPT_TOKENS="65536"`
+
+---
+
+# How do I setup custom MCP web tools or search plugins with local Gemma models in GitHub Copilot CLI?
+
+Which response is more helpful?
+Your choice will help Gemini give you more helpful responses. 
+Loading the response may take a moment.
+
+---
+
+## Choice A
+
+Setting up Model Context Protocol (MCP) servers in GitHub Copilot CLI 
+allows your local Gemma 4 model to execute structured tools like 
+real-time web search or API fetching.
+
+Because small or quantized local LLMs can struggle if inundated with 
+too many tool definitions, configuring MCP for Gemma 4 requires balancing 
+tool search options with strict JSON syntax.
+
+> Step 1: Install a Web Search MCP Server
+
+First, choose an MCP web search server. 
+Popular open-source options include: 
+
+- Brave Search MCP (structured web search) 
+- Fetch MCP (fetching/converting raw web pages to Markdown)
+
+Install your preferred MCP server globally using npx:
+
+Bash
+# Brave Search MCP (requires BRAVE_API_KEY)
+`npx -y @modelcontextprotocol/server-brave-search`
+
+# Fetch MCP (fetches and distills web pages, no API key needed)
+`npx -y @modelcontextprotocol/server-fetch`
+
+> Step 2: Configure MCP in GitHub Copilot CLI
+
+You can configure MCP servers globally via the `mcp-config.json` file or 
+through Copilot CLI's interactive session commands.
+
+> Method A: Interactive Command (Recommended)
+Launch your Copilot CLI configured to point to your local Gemma model:
+
+Bash
+copilot
+In the session prompt, invoke the MCP manager:
+
+Plaintext
+/mcp add
+Enter a Server Name (e.g., web-search) and select stdio.
+
+Set the command to npx and supply the arguments:
+
+Command: npx
+
+Args: -y @modelcontextprotocol/server-brave-search
+
+> Method B: Manual Configuration File
+Edit or create your user-level MCP configuration file at ~/.copilot/mcp-config.json:
+
+```
+JSON
+{
+  "mcpServers": {
+    "brave-search": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-brave-search"
+      ],
+      "env": {
+        "BRAVE_API_KEY": "YOUR_BRAVE_SEARCH_API_KEY"
+      }
+    },
+    "fetch": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-fetch"
+      ]
+    }
+  }
+}
+```
+
+> Step 3: Verify Model Support and Context Overhead
+
+Local models process tool definitions directly in their system prompt. 
+Gemma 4 handles function calling well, but you should take two key steps 
+to optimize performance:
+
+Verify MCP status inside Copilot CLI:
+
+Plaintext
+/mcp show
+
+---
+## Choice B
+
+Integrating Model Context Protocol (MCP) servers with a local Gemma 4 model in GitHub Copilot CLI 
+requires 
+
+- attaching web search plugins via standard MCP configurations, 
+- ensuring local provider endpoints support JSON tool calls, 
+- and enabling tool access in the CLI.
+
+> Step 1: Add a Web Search MCP Server
+
+You can configure an MCP server using an official web tool package (e.g., `Brave Search or Tavily`)
+using the interactive command or by writing the JSON configuration file directly.
+
+- Option A: Interactive Slash Command
+Start Copilot CLI and use the `/mcp` command:
+
+Plaintext
+copilot
+`/mcp add brave-search`
+Follow the interactive prompts to define the execution command (npx) and arguments.
+
+- Option B: Manual Configuration (`mcp-config.json`)
+Create or edit your local user configuration at `~/.copilot/mcp-config.json`:
+
+```
+JSON
+{
+  "mcpServers": {
+    "brave-search": {
+      "type": "stdio",
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-brave-search"
+      ],
+      "env": {
+        "BRAVE_API_KEY": "YOUR_BRAVE_SEARCH_API_KEY"
+      }
+    }
+  }
+}
+```
+
+> Step 2: Configure Environment for Local Gemma 4
+
+Local LLM engines (Ollama, LM Studio) act as the completion provider, while Copilot CLI 
+orchestrates tool calls via MCP. 
+
+Configure your local provider to accept function schemas:
+
+Bash
+
+# Point Copilot CLI to local OpenAI-compatible endpoint
+
+```
+export COPILOT_PROVIDER_BASE_URL="http://localhost:11434/v1" # Ollama default
+export COPILOT_PROVIDER_TYPE="openai"
+export COPILOT_MODEL="gemma4:26b" # Quantized model tag with tool capability
+```
+
+Note on Model Sizing: Tool calling under MCP relies on precise structural parsing. 
+Larger Gemma 4 variants (e.g., gemma4:26b or gemma4:31b) handle MCP tool schemas 
+more reliably than smaller 4B quantization formats.
+
+> Step 3: Run Copilot CLI with MCP Tools Enabled
+Launch the CLI with explicit tool permissions or auto-execution enabled:
+
+Bash
+`copilot --allow-tool="brave-search"`
+To view loaded tools during an active session, use the /mcp show slash command.
+
+> Step 4: Execute a Web Search Prompt
+Instruct the local Gemma 4 model to fetch live data using the configured MCP tool:
+
+Plaintext
+`copilot "Search the web using brave-search for the latest GitHub Copilot CLI patch release notes."`
+
+---
 
 ## What is the context windows for Gemma 4?
 
@@ -83,6 +353,18 @@ Usa il codice con cautela.Note: If you already have Ollama installed natively on
 [Web Search - Open WebUI](https://docs.openwebui.com/troubleshooting/web-search/)  
 
 [Browser Search Engine Integration - Open WebUI](https://docs.openwebui.com/tutorials/integrations/dev-tools/browser-search-engine/)  
+
+---
+
+## Google Programmable Search Engine (PSE)
+
+[Google Programmable Search Engine (PSE) - Docs](https://docs.litellm.ai/docs/search/google_pse)   
+[Google Programmable Search Engine (PSE)](https://programmablesearchengine.google.com/about/)  
+[google discontinuing "entire web" search #107](https://github.com/zoharbabin/google-researcher-mcp/issues/107)  
+
+[Google Custom Search Engine (CSE) alternative, built on Elasticsearch](https://www.elastic.co/fr/google-custom-search-engine-alternative)  
+
+*.com, *.co.uk, *.net, *.co, *.io, *.ai, *.de, *.it
 
 ---
 

@@ -115,7 +115,7 @@ a powerful model + general-purpose or research agent gives the best results.
 | `COPILOT_PROVIDER_TYPE` | Optional | The provider type: openai (default), azure, or anthropic. |
 | `COPILOT_PROVIDER_API_KEY` | Optional | Your API key for the provider. Not required for providers that do not use authentication, such as a local Ollama instance. |
 
-> Example:
+> Example 01:
 
 ```
 $env:COPILOT_PROVIDER_BASE_URL = "http://localhost:11434/v1"
@@ -219,6 +219,19 @@ Notes:
     host URL (e.g., https://my-resource.openai.azure.com). The SDK constructs
     the full path automatically.
   - See `copilot help environment` for quick reference of all environment variables.
+```
+
+---
+
+> Exaple-02
+
+```
+$env:COPILOT_PROVIDER_TYPE = "openai"
+$env:COPILOT_PROVIDER_BASE_URL = "http://localhost:11434/v1"
+$env:COPILOT_PROVIDER_API_KEY = "ollama"
+$env:COPILOT_MODEL = "qwen3.5"
+$env:COPILOT_OFFLINE = "true"
+copilot
 ```
 
 ---

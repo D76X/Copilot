@@ -47,6 +47,8 @@ the Ollama base URL to `http://host.docker.internal:11434`. This hostname is
 important when Open WebUI runs in Docker: `localhost` inside the container
 means the container, not this Windows host.
 
+---
+
 ## 2. Recommended first setup: DuckDuckGo
 
 DuckDuckGo is the fastest way to confirm the feature because it needs no API
@@ -65,7 +67,8 @@ SearXNG option below if keeping query traffic local is important.
 5. In a new Gemma chat, switch on the **Web Search** globe/tool control beside
    the prompt. All three gates must be enabled: the global setting, the
    model setting, and the per-chat control.
-6. Ask a time-sensitive question, for example:
+6. start ollama with the gemma4 local LLM from a terminal: `ollama run gemma4`
+7. Ask a time-sensitive question, for example:
 
    ```text
    Search the web for the current Open WebUI release and give me its version,
@@ -75,6 +78,8 @@ SearXNG option below if keeping query traffic local is important.
    A successful response includes source citations. Do not accept an
    uncited answer as proof that live search worked.
 
+---
+
 ## 3. Private no-key option: self-host SearXNG
 
 Choose this option when you prefer a local metasearch service or DuckDuckGo
@@ -82,8 +87,8 @@ begins to rate-limit frequent searches. SearXNG still queries the upstream
 engines it is configured to use; it does not make external search results
 magically local.
 
-The official SearXNG Compose template is the safest starting point. In
-PowerShell:
+The official SearXNG Compose template is the safest starting point. 
+In PowerShell:
 
 ```powershell
 New-Item -ItemType Directory -Force "$HOME\searxng\core-config" | Out-Null
@@ -135,6 +140,8 @@ Use `host.docker.internal` because Open WebUI needs to reach a service on the
 Windows host. If Open WebUI and SearXNG instead share one Docker Compose
 network, use SearXNG's Compose service name and its container port rather than
 this host address.
+
+---
 
 ## 4. Use local Gemma 4 through Copilot CLI
 

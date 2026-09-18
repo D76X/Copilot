@@ -3,10 +3,27 @@
 [GitHub Copilot app for Beginners by GitHub - Playlist](https://www.youtube.com/playlist?list=PLNBWjViYXaIY)  
 
 [Write your first prompt in the GitHub Copilot app | Tutorial for beginners GitHub](https://www.youtube.com/watch?v=WrMt6T8yu18)   
+
 [Meet the GitHub Copilot app: Your new AI desktop assistant GitHub](https://www.youtube.com/watch?v=LsA4vIX_3UY&list=PLNBWjViYXaIY&index=1)  
+
 [The My work tab: your mission control in the GitHub Copilot app GitHub](https://www.youtube.com/watch?v=h9g4umRfgn0&list=PLNBWjViYXaIY&index=3)  
+
 [GitHub Copilot app for beginners: using the diff, terminal, and browser GitHut](https://www.youtube.com/watch?v=IyWlcES85Zw&list=PLNBWjViYXaIY&index=7)  
+
 [How to teach GitHub Copilot about your codebase | Tutorial for Beginners GitHub](https://www.youtube.com/watch?v=QGakvawJc2M&list=PLNBWjViYXaIY&index=8)  
+
+[How to continue GitHub Copilot app sessions in VS Code GitHub](https://www.youtube.com/watch?v=dNCGfpDho0U&list=PLNBWjViYXaIY&index=9)   
+
+[How to run parallel AI agents in the GitHub Copilot app | Tutorial for beginners GitHub](https://www.youtube.com/watch?v=F1UwPa7lemA&list=PLNBWjViYXaIY&index=5)   
+
+## Camvass
+
+[Canvas Extensions](https://awesome-copilot.github.com/extensions/)   
+`/create-canvass` skill
+
+[How to build custom workflows with canvases in the GitHub Copilot app | Tutorial for beginners GitHub](https://www.youtube.com/watch?v=Xfgq79gV_GM&list=PLNBWjViYXaIY&index=7)   
+
+[A Beginner's Guide to GitHub Copilot App Canvases: Two-Way Agent Session UI James Montemagno](https://www.youtube.com/watch?v=nO-BLN2X7Jg)   
 
 ---
 

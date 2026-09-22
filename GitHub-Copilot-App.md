@@ -16,7 +16,7 @@
 
 [How to run parallel AI agents in the GitHub Copilot app | Tutorial for beginners GitHub](https://www.youtube.com/watch?v=F1UwPa7lemA&list=PLNBWjViYXaIY&index=5)   
 
-## Camvass
+## Canvass
 
 [Canvas Extensions](https://awesome-copilot.github.com/extensions/)   
 `/create-canvass` skill

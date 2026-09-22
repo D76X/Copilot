@@ -70,8 +70,8 @@ To give your local Gemma 4 model internet access when using it inside the GitHub
 > Step 1: Ensure `COPILOT_OFFLINE` is Disabled
 
 When running local LLM providers (like Ollama or LM Studio) with Copilot CLI, 
-the CLI is often executed with `COPILOT_OFFLINE="true"`. Ensure this variable is not set so 
-the CLI doesn't block out-of-band requests or tool executions.  
+the CLI is often executed with `COPILOT_OFFLINE="true"`. 
+Ensure this variable is not set so the CLI doesn't block out-of-band requests or tool executions.  
 
 Make sure your shell profile does not set: `export COPILOT_OFFLINE=false  # or leave it unset entirely`
 

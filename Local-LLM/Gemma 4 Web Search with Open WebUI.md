@@ -2,8 +2,8 @@
 
 This guide connects the already-installed `gemma4:latest` Ollama model to
 Open WebUI's web-search tool on this Windows PC. Gemma itself remains local:
-Open WebUI performs the network requests, retrieves relevant page content, and
-supplies that content to Gemma as chat context.
+Open WebUI performs the network requests, retrieves relevant page content, 
+and supplies that content to Gemma as chat context.
 
 ## What you need
 
@@ -15,11 +15,14 @@ The model does **not** receive unrestricted Internet access, and it needs no
 network-specific Ollama configuration. It can only use the web-search tool that
 Open WebUI exposes and that the chat/model configuration permits.
 
+---
+
 ## 1. Start the existing services
 
 1. Start **Docker Desktop** and wait until it reports that its engine is
    running. Docker was not running when this guide was prepared, so an existing
    Open WebUI container cannot start until this step is complete.
+
 2. In PowerShell, confirm that Ollama exposes the installed model:
 
    ```powershell
@@ -27,6 +30,7 @@ Open WebUI exposes and that the chat/model configuration permits.
    ```
 
    The JSON response should include `gemma4:latest`.
+
 3. If Open WebUI has an existing container, start it without deleting its
    persistent data:
 
@@ -58,16 +62,22 @@ SearXNG option below if keeping query traffic local is important.
 1. In Open WebUI, open **Admin Panel** and find **Settings > Web Search**.
    Depending on the installed Open WebUI version, this section may appear
    under **Retrieval**.
+
 2. Turn on **Enable Web Search**.
+
 3. Select **DuckDuckGo** (shown as `duckduckgo` or `ddgs` in some versions) as
    the search engine, then save.
+
 4. Open the Gemma model's advanced settings. Enable **Web Search** and set
    **Function Calling** to **Native** when those model-level settings are
    available.
+
 5. In a new Gemma chat, switch on the **Web Search** globe/tool control beside
    the prompt. All three gates must be enabled: the global setting, the
    model setting, and the per-chat control.
+
 6. start ollama with the gemma4 local LLM from a terminal: `ollama run gemma4`
+
 7. Ask a time-sensitive question, for example:
 
    ```text
@@ -75,12 +85,14 @@ SearXNG option below if keeping query traffic local is important.
    release date, and source links.
    ```
 
-   A successful response includes source citations. Do not accept an
-   uncited answer as proof that live search worked.
+   A successful response includes source citations. 
+   Do not accept an uncited answer as proof that live search worked.
 
 ---
 
 ## 3. Private no-key option: self-host SearXNG
+
+[SearXNG: Finally... A Search Engine That Doesn't Suck. Switch and Click](https://www.youtube.com/watch?v=W9iV74uAd2Y)  
 
 Choose this option when you prefer a local metasearch service or DuckDuckGo
 begins to rate-limit frequent searches. SearXNG still queries the upstream
@@ -145,10 +157,10 @@ this host address.
 
 ## 4. Use local Gemma 4 through Copilot CLI
 
-Copilot CLI can use the same local Ollama model through its BYOK (bring your
-own model) support. This is a separate path from Open WebUI: Open WebUI's
-search toggle and SearXNG configuration do not automatically carry over to
-Copilot CLI.
+Copilot CLI can use the same local Ollama model through its BYOK 
+(bring your own model) support. This is a separate path from Open WebUI: 
+Open WebUI's search toggle and SearXNG configuration do not automatically 
+carry over to Copilot CLI.
 
 Before starting Copilot CLI, confirm that Ollama's OpenAI-compatible endpoint
 can list the model:
@@ -188,6 +200,8 @@ Use PowerShell Invoke-WebRequest to retrieve the official Ollama release notes
 at https://github.com/ollama/ollama/releases, then summarize the newest release
 and link to the source. Ask for approval before running the command.
 ```
+
+`Invoke-WebRequest -Uri "https://github.com/ollama/ollama/releases" -UseBasicParsing`
 
 Review the proposed command before approving it. The fetched page content is
 sent to the local Ollama endpoint as part of the tool result. Because the model

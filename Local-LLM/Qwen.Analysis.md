@@ -28,6 +28,8 @@ The main correction to the collected notes is the phrase "64 GB of RAM shared wi
 | Can one be used for easy work and the other for coding? | Yes. This is the recommended arrangement. Model selection is per Ollama command or API request. |
 | Do both consume RAM while merely stored? | No. They consume substantial RAM/VRAM only while loaded. Ollama normally keeps a used model loaded for five minutes, or it can be unloaded immediately with `ollama stop <model>`. |
 | Should both be loaded concurrently? | No for this PC. It may be technically possible at small contexts, but it wastes scarce memory and offers no advantage for the intended one-model-at-a-time workflow. |
+| Can a BIOS or Windows setting increase the RTX 500 Ada from 4 GB VRAM? | No. Its dedicated GDDR6 capacity is physical hardware. Shared GPU memory, a larger page file, Resizable BAR, or an Intel UMA reservation does not add NVIDIA VRAM. |
+| Can settings still improve GPU offload? | Yes, indirectly: reduce context, quantize the KV cache, keep parallelism at one, unload other models, and close GPU-heavy applications. These free existing VRAM; they do not create more. |
 
 ## What is actually installed and measured
 
@@ -135,6 +137,129 @@ The model's hybrid architecture and Ollama's implementation may perform better o
 
 The RTX 500 Ada Laptop GPU is a modern, supported CUDA device, but its **4 GB VRAM and 25-35 W mobile power envelope** make it weak for a 27B local LLM. It can accelerate a small offloaded portion and some prompt processing, but it cannot hold Qwen3.8-27B's 17 GB Q4 language model.
 
+### Why a 4 GB GPU results in mostly CPU execution
+
+An LLM is made of many sequential transformer layers. Ollama's llama.cpp backend can place some complete layers on the GPU and leave the remainder in system RAM for the CPU. GPU execution is fast only for layers whose weights and working buffers fit in usable VRAM.
+
+The relevant comparison is not 18 GB of model storage versus 4 GB printed on the GPU label. Some VRAM is unavailable to model weights because Windows, the driver, Ollama compute buffers, and the context/KV cache also need it:
+
+| Item | Observed or published amount |
+|---|---:|
+| RTX physical VRAM | 4,094 MiB |
+| Driver-reserved VRAM | About 201 MiB at the audit |
+| Free VRAM before a model | About 3,893 MiB in `nvidia-smi` |
+| VRAM Ollama considered available during the Gemma load | About 2.7 GiB |
+| Qwen language-model weights alone | About 17 GB |
+| Qwen vision projector | About 931 MB |
+
+Even in the impossible best case where all 4 GB were free for weights, it would hold less than one quarter of the package. In the measured Gemma run, the unusually large 131K context consumed additional cache/buffer space; Ollama could offload only **1 of 43 layers** and ran the rest on the CPU. Lowering context should let Ollama offload more layers, but a 17 GB Qwen language model will remain predominantly CPU-backed on a 4 GB card.
+
+Each generated token must pass through every layer. The GPU handles its resident layers, the CPU handles RAM-resident layers, and intermediate data crosses the CPU/GPU boundary. System DDR5 RAM has much higher capacity but is not the RTX's local high-bandwidth GDDR6. This is why having enough total RAM prevents an out-of-memory failure but does not produce the speed of a fully GPU-resident model.
+
+### Why Windows shared GPU memory is not extra VRAM
+
+Task Manager can show a large **Shared GPU memory** figure, often based on a fraction of installed RAM. Microsoft defines it as ordinary system memory that Windows' video-memory manager can make available to either the CPU or GPU. By contrast, **Dedicated GPU memory** on a discrete GPU is the physical VRAM on the graphics device.
+
+Shared memory is useful for compatibility and oversubscription, but it does not change this RTX from a 4 GB card into a 20 GB or 36 GB card:
+
+- it is taken from the same 64 GB needed by Windows, Ollama, model weights, and applications;
+- the discrete NVIDIA GPU reaches it over the PCIe path rather than its local VRAM interface;
+- its latency and bandwidth are worse than local VRAM;
+- Ollama already has the more direct option of keeping non-offloaded layers in system RAM and executing them on the CPU.
+
+The Task Manager number is a **maximum budget**, not memory permanently attached to the RTX and not a guarantee that CUDA/Ollama will treat it as fast device memory.
+
+### Can dedicated VRAM be increased through settings?
+
+**No.** The RTX 500 Ada Laptop GPU's 4 GB GDDR6 capacity is fixed by physical memory chips in the laptop. There is no safe BIOS, Windows, NVIDIA Control Panel, registry, or Ollama setting that changes those chips into a larger framebuffer.
+
+| Apparent option | What it actually does | Recommendation |
+|---|---|---|
+| Increase UMA/DVMT/frame-buffer allocation in BIOS | Reserves more system RAM for the **Intel integrated GPU**, not the NVIDIA RTX. It can leave less RAM for Qwen. Even if the firmware offers this option, it cannot enlarge the RTX framebuffer. | Do not change it for this deployment. |
+| Windows Shared GPU Memory | Allows a GPU to use ordinary system RAM under WDDM policy. It is automatic, slower, and already part of the system-memory tradeoff. | Leave Windows to manage it. |
+| Increase the page file | Increases virtual-memory commit and may prevent a crash, but paging model data to SSD is drastically slower. | Keep as emergency protection, not as an optimization. |
+| Enable Resizable BAR | Changes how much GPU memory the CPU can map at once; it does not add VRAM. | Leave firmware defaults unless Dell recommends otherwise for another reason. |
+| Raise `OLLAMA_GPU_OVERHEAD` | Reserves **more** VRAM from Ollama's scheduler and therefore normally reduces model offload. | Do not use it to seek more speed. |
+| Overclock, flash a modified VBIOS, or raise power limits | Might alter clock speed but not memory capacity; it adds stability, thermal, warranty, and hardware risk. | Do not do this. |
+| Add system RAM | Gives CPU inference more capacity but does not add RTX VRAM. This PC already has 64 GB, which is sufficient for the proposed model. | Not needed for Qwen3.8-27B Q4. |
+
+The internal laptop GPU is not a normal replaceable desktop card. A larger internal GPU would generally require a different compatible system board and cooling/power design, making it an impractical upgrade.
+
+### Safe changes that can improve effective GPU use
+
+These changes do not increase physical VRAM. They reduce other consumers of the existing 4 GB, allowing Ollama to place as many model layers as its scheduler can fit.
+
+#### 1. Reduce context first
+
+This is the highest-value change because the measured Gemma session was using 131,072 tokens. Use the proposed 16K Qwen profile first. Compare 16K with 32K only after measuring offload and task quality. A smaller context means a smaller KV cache and can free VRAM for model layers.
+
+The ideal context is the smallest value that reliably contains the prompt, retrieved code, tool results, reasoning, and answer. It is not automatically the model's maximum.
+
+#### 2. Use Flash Attention and an 8-bit KV cache
+
+Ollama automatically uses Flash Attention when the backend/device supports it. It can be forced for a controlled test, and Ollama officially recommends `q8_0` as the lower-memory KV-cache option with very small expected quality impact compared with F16. These settings are global to Ollama:
+
+```powershell
+[Environment]::SetEnvironmentVariable('OLLAMA_FLASH_ATTENTION', '1', 'User')
+[Environment]::SetEnvironmentVariable('OLLAMA_KV_CACHE_TYPE', 'q8_0', 'User')
+```
+
+Quit the Ollama tray application completely and relaunch it after changing user environment variables. Confirm in the log that Flash Attention and the requested cache type are active. If Qwen or another model behaves incorrectly, revert both settings:
+
+```powershell
+[Environment]::SetEnvironmentVariable('OLLAMA_FLASH_ATTENTION', $null, 'User')
+[Environment]::SetEnvironmentVariable('OLLAMA_KV_CACHE_TYPE', $null, 'User')
+```
+
+Do not begin with `q4_0` KV cache. It saves more memory but Ollama documents a more noticeable quality loss, especially at larger contexts. Test `q8_0` first.
+
+#### 3. Keep one model and one request active
+
+Prevent concurrent models or parallel requests from multiplying context memory:
+
+```powershell
+[Environment]::SetEnvironmentVariable('OLLAMA_MAX_LOADED_MODELS', '1', 'User')
+[Environment]::SetEnvironmentVariable('OLLAMA_NUM_PARALLEL', '1', 'User')
+```
+
+These values match the intended one-user workflow. Explicitly run `ollama stop gemma4` before loading Qwen. Ollama documents that required memory scales with parallel requests multiplied by context length.
+
+To restore Ollama's defaults later:
+
+```powershell
+[Environment]::SetEnvironmentVariable('OLLAMA_MAX_LOADED_MODELS', $null, 'User')
+[Environment]::SetEnvironmentVariable('OLLAMA_NUM_PARALLEL', $null, 'User')
+```
+
+#### 4. Free existing NVIDIA VRAM and use AC performance mode
+
+Before loading Qwen, close CUDA, CAD, video, or other applications using the NVIDIA GPU and check `nvidia-smi`. Keep the laptop connected to AC power and use the supported Windows/Dell performance mode if sustained inference is required. This can preserve clock speed, but it does not increase capacity and may increase fan noise and temperature.
+
+The integrated Intel GPU normally drives the desktop on this system, which already helps keep NVIDIA VRAM relatively free. Forcing applications onto the NVIDIA GPU would work against the LLM.
+
+#### 5. Measure whether each change improves the actual split
+
+After every context or cache change, run the same prompt and inspect:
+
+```powershell
+ollama ps
+nvidia-smi
+```
+
+Record `PROCESSOR`, `CONTEXT`, prompt tokens/s, output tokens/s, and free system RAM. A change is useful only if it increases GPU offload or speed without harming answer quality or causing paging. Do not assume a setting helped merely because Task Manager's shared-memory number increased.
+
+### Intel iGPU and external-GPU options
+
+The Ollama log detected Intel Arc through Vulkan but reported:
+
+```text
+dropping integrated GPU; to enable, set OLLAMA_IGPU_ENABLE=1
+```
+
+Ollama's current source confirms that `OLLAMA_IGPU_ENABLE` makes integrated GPUs eligible. This does **not** promise that the Intel and NVIDIA devices will combine into one fast memory pool. The Intel iGPU uses system RAM, competes with the CPU for DDR5 bandwidth, and currently has open Ollama issues involving Intel/Vulkan memory allocation and model correctness. Enabling it is an experimental A/B benchmark, not the primary recommendation. If tested, record output correctness and speed and remove the variable if it regresses either one.
+
+This PC exposes a USB4 controller, so an external GPU enclosure may be possible in principle after checking Dell/enclosure compatibility. An external NVIDIA card with 24 GB or more VRAM would materially change the model split, but an enclosure, desktop-class GPU, power supply, driver behavior, and USB4 bandwidth make it expensive and less predictable than a desktop workstation. It is a hardware purchase, not a VRAM setting.
+
 A useful local-LLM comparison is VRAM capacity rather than model-year branding:
 
 | GPU class | Example capacities | Qwen3.8-27B Q4 implication |
@@ -211,7 +336,7 @@ By default, Ollama keeps a recently used model in memory for five minutes. `olla
 - Record `ollama --version`, `ollama list`, `ollama ps`, free RAM, free disk, and `nvidia-smi` output.
 - Keep `gemma4:latest`; do not remove or overwrite it.
 - Stop unused Docker containers, VMs, large browser sessions, and extra IDE instances for the first Qwen test.
-- Do not change BIOS GPU-memory settings.
+- Do not change BIOS GPU-memory settings: any UMA/DVMT allocation applies to the Intel iGPU and does not enlarge the NVIDIA RTX framebuffer.
 
 ### Phase 1 - Install the official package
 
@@ -314,7 +439,10 @@ Removing the alias alone should not remove shared model blobs still referenced b
 | Risk | Mitigation |
 |---|---|
 | Qwen fits but is too slow | Benchmark before integrating deeply; reserve it for hard tasks; keep Gemma for routine work. |
-| Context setting consumes too much memory | Start at 16K, monitor RAM/page file, and raise incrementally. |
+| Context setting consumes too much memory | Start at 16K, monitor RAM/page file and GPU offload, and raise incrementally. |
+| Task Manager appears to offer tens of GB of shared GPU memory | Treat it as ordinary system RAM and a WDDM budget, not added NVIDIA VRAM. Do not reserve more UMA memory. |
+| Memory optimizations change output quality | Start with `q8_0` KV cache, benchmark representative tasks, and revert environment variables if quality or stability regresses. |
+| Intel iGPU experiment is slower or unstable | Keep the default behavior that drops the iGPU; treat `OLLAMA_IGPU_ENABLE=1` only as an isolated A/B test. |
 | Ollama version lacks complete support for the new model | Update Ollama first; use the official `qwen3.8:27b` tag. |
 | 4-bit quality differs from published results | Compare on representative repository tasks and require tests, not persuasive prose. |
 | Thinking mode creates long waits | Use it for hard tasks; disable or reduce reasoning only after checking the current Ollama/Qwen request controls. |
@@ -329,6 +457,8 @@ Install and evaluate the official `qwen3.8:27b` Ollama model. The PC has ample d
 
 The limiting component is the RTX 500 Ada Laptop GPU's 4 GB VRAM, not disk or total RAM. Qwen should run, but mostly through the Core Ultra CPU and DDR5 system memory. The correct expectation is **higher coding capability at lower speed**, not a fast GPU-resident 27B experience. The implementation should proceed only through the staged 16K -> 32K -> optional 64K benchmark plan above.
 
+Do not try to increase NVIDIA VRAM through BIOS, Windows shared-memory, page-file, or Resizable BAR settings; none changes the physical 4 GB. The recommended no-cost configuration is a 16K context, one loaded model, one parallel request, and, after a baseline test, Flash Attention with a `q8_0` KV cache. A real capacity increase requires different GPU hardware, such as a carefully validated 24 GB external GPU setup or, preferably, a desktop/workstation designed around a 24-32 GB card.
+
 ## Evidence and sources
 
 ### Local evidence collected on this PC
@@ -337,7 +467,7 @@ The limiting component is the RTX 500 Ada Laptop GPU's 4 GB VRAM, not disk or to
 - `Get-PhysicalDisk`, `Win32_LogicalDisk`, and `Win32_PageFileUsage`.
 - `nvidia-smi` and `nvidia-smi -q`.
 - `ollama --version`, `ollama list`, `ollama show gemma4`, `ollama ps`, Ollama `server.log`, and a timed local API generation.
-- Repository notes: [`Local-LLM/Qwen.md`](Local-LLM/Qwen.md), [`Local-LLM/Gemma 4.md`](Local-LLM/Gemma%204.md), [`Local-LLM/GitHub Copilot CLI with Local Model.md`](Local-LLM/GitHub%20Copilot%20CLI%20with%20Local%20Model.md), and the empty [`.github/specs/02-spec-qwen3.8.md`](.github/specs/02-spec-qwen3.8.md).
+- Repository notes: [`Qwen.md`](Qwen.md), [`Gemma 4.md`](Gemma%204.md), [`GitHub Copilot CLI with Local Model.md`](GitHub%20Copilot%20CLI%20with%20Local%20Model.md), and the empty [`../.github/specs/02-spec-qwen3.8.md`](../.github/specs/02-spec-qwen3.8.md).
 
 ### Web sources
 
@@ -348,6 +478,11 @@ The limiting component is the RTX 500 Ada Laptop GPU's 4 GB VRAM, not disk or to
 - [Ollama context-length guidance](https://docs.ollama.com/context-length)
 - [Ollama Windows requirements and model storage](https://docs.ollama.com/windows)
 - [Ollama hardware support](https://docs.ollama.com/gpu)
+- [Ollama source: integrated-GPU enable setting](https://github.com/ollama/ollama/blob/main/envconfig/config.go)
+- [Ollama issue: Intel iGPU Vulkan KV-cache allocation failure](https://github.com/ollama/ollama/issues/18531)
+- [Ollama issue: Intel Arc Vulkan Gemma correctness regression](https://github.com/ollama/ollama/issues/15248)
+- [Microsoft DirectX: dedicated and shared GPU memory in Task Manager](https://devblogs.microsoft.com/directx/gpus-in-the-task-manager/)
+- [Microsoft WDDM: calculating graphics memory](https://learn.microsoft.com/en-us/windows-hardware/drivers/display/calculating-graphics-memory)
 - [NVIDIA GeForce laptop GPU comparison](https://www.nvidia.com/en-us/geforce/laptops/compare/)
 - [NVIDIA desktop GPU comparison](https://www.nvidia.com/en-us/geforce/graphics-cards/compare/)
 

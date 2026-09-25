@@ -1,24 +1,108 @@
 # Qwen
 
-[Qwen3.8 27B is something else.. Caleb Writes Code](https://www.youtube.com/watch?v=3WbXyUolFA0)  
+---
+
+# Video
+
+[Qwen 3.8 Locally: How Much Can You Actually Trust It? Zero to MVP](https://www.youtube.com/watch?v=dTutfoSVMq4)   
 
 [Is Qwen 3.8 27b The New King of the Local LLMs? Gary Explains](https://www.youtube.com/watch?v=An4_SCFo5-A&t=61s) 
 
+[Qwen3.8 27B is something else.. Caleb Writes Code](https://www.youtube.com/watch?v=3WbXyUolFA0)  
+
 ---
 
-# Which of the Qwen model could I run on a Windows 11 PC with 64 GB of RAM shared with the graphic card?
+# Which of the Qwen models could I run on a Windows 11 PC with 64 GB of RAM shared with the graphic card?
+
+---
+
+# Answer from Perplexity
+
+With 64 GB of RAM shared between system and GPU on Windows 11, you can comfortably run **Qwen models up to about 27–35B parameters** at 4‑bit quantization (GGUF Q4_K_M), and even some larger mixture‑of‑experts variants if you accept tighter memory headroom. [willitrunai](https://willitrunai.com/blog/qwen-3-gpu-requirements)
+
+## Quick recommendation
+
+For your hardware, the sweet spot is:
+
+- **Qwen3.8‑27B (Q4_K_M GGUF)** – best overall quality/size balance; needs ~24 GB RAM, leaving plenty of headroom for context and other apps. [promptquorum](https://www.promptquorum.com/local-llms/best-local-llms-2026)
+
+- **Qwen3.5‑35B‑A3B (Q4_K_M)** – a strong MoE alternative; fits in ~20 GB VRAM/RAM at Q4, so also fine on 64 GB total. [willitrunai](https://willitrunai.com/blog/qwen-3-gpu-requirements)
+
+Anything much above that (e.g., 70B+ dense models) will start to consume 40–50+ GB just for weights, leaving little room for long contexts or multitasking. [needtoknowit.com](https://needtoknowit.com.au/blog/what-llms-actually-run-on-16gb-32gb-and-64gb-ram/)
+
+## Model options that fit well on 64 GB
+
+### Excellent fit (plenty of headroom)
+
+- **Qwen3.8‑27B**  
+  - ~24 GB RAM at Q4_K_M. [promptquorum](https://www.promptquorum.com/local-llms/best-local-llms-2026)
+  - Strong generalist: coding, reasoning, long context (up to 262K, optionally 1M). [promptquorum](https://www.promptquorum.com/local-llms/best-local-llms-2026)
+  - Ideal if you want one high‑quality model for daily use.
+
+- **Qwen3.6‑27B / Qwen3‑32B**  
+  - ~17–20 GB (27B) and ~19 GB (32B) at Q4_K_M. [willitrunai](https://willitrunai.com/blog/qwen-3-gpu-requirements)
+  - Slightly lighter than 3.8‑27B; great if you also run other workloads.
+
+### Good fit (still comfortable)
+
+- **Qwen3.5‑35B‑A3B (MoE)**  
+  - ~19.6 GB at Q4_K_M. [willitrunai](https://willitrunai.com/blog/qwen-3-gpu-requirements)
+  - Mixture‑of‑experts architecture: high capability with moderate memory use.
+
+- **Qwen2.5‑72B at Q4_K_M**  
+  - Around 47 GB for weights before runtime overhead. [needtoknowit.com](https://needtoknowit.com.au/blog/what-llms-actually-run-on-16gb-32gb-and-64gb-ram/)
+  - Technically possible on 64 GB, but you’ll have limited context length and little room for other apps; only if you really need 70B‑class quality.
+
+### Smaller, very fast options
+
+If you want very fast, low‑latency inference or plan to run multiple models:
+
+- **Qwen3.5‑9B** – ~5.7 GB at Q4. [willitrunai](https://willitrunai.com/blog/qwen-3-gpu-requirements)
+- **Qwen3‑14B** – ~8.3 GB at Q4_K_M. [willitrunai](https://willitrunai.com/blog/qwen-3-gpu-requirements)
+These leave lots of RAM for very long contexts, RAG pipelines, or running other tools.
+
+## Practical setup on Windows 11
+
+You don’t need a dedicated high‑VRAM GPU; with 64 GB shared memory you can run these models via:
+
+- **Ollama** (simplest):  
+  - Example: `ollama pull qwen3.8:27b` then `ollama run qwen3.8:27b`. [promptquorum](https://www.promptquorum.com/local-llms/best-local-llms-2026)
+- **LM Studio** or **KoboldCPP / llama.cpp**:  
+  - Download a **GGUF Q4_K_M** file for your chosen Qwen variant and load it; the tool will use CPU + shared GPU memory automatically. [promptquorum](https://www.promptquorum.com/local-llms/run-qwen-locally-guide-2026)
+
+Rule of thumb for RAM usage (very rough):  
+\[
+\text{RAM (GB)} \approx \frac{\text{params (B)} \times \text{bits per weight}}{8} \times 1.1
+\]  
+So a 27B model at 4 bits: \(27 \times 4 / 8 \times 1.1 \approx 14.85\) GB for weights, plus KV cache and overhead → ~20–24 GB in practice, matching observed numbers. [promptquorum](https://www.promptquorum.com/local-llms/best-local-llms-2026)
+
+## Suggested choice for you
+
+Given your background and likely use cases (coding, architecture docs, experimentation):
+
+- **Primary model:** **Qwen3.8‑27B (Q4_K_M)** via Ollama or LM Studio. [promptquorum](https://www.promptquorum.com/local-llms/best-local-llms-2026)
+- **Secondary, lighter model:** **Qwen3.5‑9B** or **Qwen3‑14B** for fast, local “copilot” style tasks. [willitrunai](https://willitrunai.com/blog/qwen-3-gpu-requirements)
+
+If you tell me your typical context length (e.g., “I often paste 20–50k tokens of code/docs”) and whether you care more about coding vs. general reasoning, I can narrow this to a single best model and quantization level for your exact workflow.
+
+---
+
+# Answer from Google Gemini
 
 With 64 GB of system RAM shared with an integrated graphics card on a Windows 11 PC (such as an AMD Ryzen AI APU or Intel Core Ultra), 
 your computer functions similarly to a unified memory system. While Windows dynamically allocates about half of your system memory (~32 GB) 
 as "Shared GPU Memory" by default, modern local AI runners can tap into your full RAM pool using CPU/GPU offloading.
 
-You can comfortably and efficiently run any Qwen model up to the 32B/35B size tier, while 72B models will fit but run painfully slow.
+You can comfortably and efficiently run any Qwen model up to the 32B/35B size tier, 
+while 72B models will fit but run painfully slow.
 
 ------------------------------
 
 ## 🟢 The "Sweet Spot" (Fast & Highly Capable)
 
-These models fit entirely into your RAM with plenty of headroom for Windows 11, background apps, and a large context window. 
+These models fit entirely into your RAM with plenty of headroom for Windows 11, 
+background apps, and a large context window. 
+
 They will run with excellent responsiveness.
 
 * Qwen2.5-14B / Qwen3-14B (Quantized Q4_K_M or Q8_0):
@@ -59,7 +143,8 @@ To help narrow down the perfect setup, let me know:
 
 # What are the available Qwen models by size?
 
-Qwen models span a broad spectrum of sizes, ranging from ultra-small 0.5B-0.8B variants for mobile devices 
+Qwen models span a broad spectrum of sizes, ranging from 
+ultra-small 0.5B-0.8B variants for mobile devices 
 up to massive 2.4-trillion-parameter Mixture-of-Experts (MoE) flagships. [1, 2, 3] 
 
 ## Available Model Sizes
@@ -71,7 +156,6 @@ up to massive 2.4-trillion-parameter Mixture-of-Experts (MoE) flagships. [1, 2, 
 * Mid Sizes (7B to 9B / 27B to 32B): The workhorse parameter tier across the family (including base, coder, math, and vision versions) offering high performance on consumer hardware. [3, 4, 5, 6] 
 
 * Large / Flagship Dense & MoE Sizes (72B to 480B+): High-capacity open weights and cloud-tier APIs (such as MoE variants with active parameter subsets like Qwen3-235B-A22B or large coder/max options scaling into hundreds of billions and trillion-parameter architectures like Qwen3.8-Max at 2.4T). [1, 2, 7] 
-
 
 [1] [https://www.mindstudio.ai](https://www.mindstudio.ai/blog/qwen-3-8-max-benchmarks-features)
 [2] [https://www.secondtalent.com](https://www.secondtalent.com/resources/every-qwen-ai-model-explained-compared/)

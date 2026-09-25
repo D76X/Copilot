@@ -4,7 +4,7 @@ Gemma4 can be used as a local model in a few diffent ways.
 
 ---
 
-##  Use Gemma4 through Open WebUI
+##  Use Gemma 4 through Open WebUI
 
 - 01 Start gemma4 local model with Ollama: `ollama run gemma4`
 - 02 Start the Open-WebUI container in Docker and open it @ http://localhost:3000/
@@ -15,7 +15,7 @@ search engine service that you can choose and set up.
 
 ---
 
-##  Use Gemma4 through Copilot CLI
+##  Use Gemma 4 through Copilot CLI
 
 In a terminal, i.e. a Visual Studio Code terminal use the following
 to start a session with the local model gemma4
@@ -39,9 +39,17 @@ copilot
 
 [A Visual Guide to Gemma 4 12B](https://newsletter.maartengrootendorst.com/p/a-visual-guide-to-gemma-4-12b)  
 
+[Hugging Face - Gemma 4](https://huggingface.co/google/gemma-4-12B-it)   
+
+[gemma-skills - GitHub](https://github.com/google-gemma/gemma-skills)  
+
 ---
 
 # Videos 
+
+[Gemma 4 12B: The Encoder-Free Model Explained Google for Developers](https://www.youtube.com/watch?v=YDCB8Bk1OBE)    
+
+[Gemma 4 in 13 Minutes on your Laptop That DevOps Guy](https://www.youtube.com/watch?v=nu6Cm7g052U)   
 
 [Gemma 4 12B Is INSANE – Is THIS the BEST Local Coding Model Yet? Bijan Bowen](https://www.youtube.com/watch?v=LJIfSr2fVTc&t=1304s)  
 
@@ -490,7 +498,22 @@ NAME             ID              SIZE      MODIFIED
 gemma4:latest    c6eb396dbd59    9.6 GB    2 months ago 
 ```
 
-Based on the file size of 9.6 GB and the `c6eb396dbd59` ID from your ollama ls output, 
-you have the `Gemma 4 E4B` version installed on your machine.
+Based on the file size of 9.6 GB and the `c6eb396dbd59` ID from 
+your ollama ls output, you have the `Gemma 4 E4B` version installed 
+on your machine.
+
+# How many parameters has Gemma 4 E4B?
+
+**Gemma 4 E4B** has **3.94 billion core LLM parameters** (often referred to as ~4.5B effective parameters) and **~8 billion total parameters** when accounting for all auxiliary components:
+
+| Component | Parameter Count |
+| --- | --- |
+| **LLM Core / Decoder** | ~3.94B |
+| **Audio Encoder** | ~305M |
+| **Vision Encoder** | ~150M |
+| **Per-Layer Embeddings (PLE) & Input Embeddings** | ~3.49B |
+| **Total Model Parameters** | **~8.0B** |
+
+The "E4B" designation stands for **Edge ~4B**, highlighting its active computational weight for edge deployment (mobile and on-device offline inference) despite storing ~8B parameters total.
 
 ---

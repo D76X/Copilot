@@ -1,6 +1,8 @@
 # DeepSeek Harness
 
-[deepseek-harness - GitHub](https://github.com/deepseek-ai/deepseek-harness)  
+[deepseek-harness - GitHub](https://github.com/deepseek-ai/deepseek-harness)   
+
+[You're Not Locked In By The Model. You're Locked In By The Harness. Manolo Remiddi](https://www.youtube.com/watch?v=k8jYOcQUB_A)  
 
 ---
 

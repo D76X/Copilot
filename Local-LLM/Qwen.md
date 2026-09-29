@@ -10,6 +10,8 @@
 
 [Qwen3.8 27B is something else.. Caleb Writes Code](https://www.youtube.com/watch?v=3WbXyUolFA0)  
 
+[Qwen3.6 Code it with AI - Language Model Roundup 2 (ep.30) DevExpress](https://www.youtube.com/watch?v=IAnaqod_lwE&list=PL8h4jt35t1whFkEryOz94bu2KQPY48HLy&index=20)
+
 ---
 
 # Which of the Qwen models could I run on a Windows 11 PC with 64 GB of RAM shared with the graphic card?

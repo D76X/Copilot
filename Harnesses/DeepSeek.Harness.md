@@ -8,6 +8,8 @@
 
 # Videos
 
+[Deepseek Harness: Not What You Think Kai](https://www.youtube.com/watch?v=y0BW4hpMpyM)   
+
 [The Insane Engineering Behind DeepSeek Harness BetterWay](https://www.youtube.com/watch?v=yjHdWGWgAfk)   
 
 [DeepSeek Harness Setup: A Free Claude Code You Own In 10 Minutes Sharbel A.](https://www.youtube.com/watch?v=EDxVn1q8udE&t=115s)  

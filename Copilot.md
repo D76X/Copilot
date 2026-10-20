@@ -931,3 +931,32 @@ Multiple topics	Use /rename per topic	Easy to resume right session
 
 ---
 
+# What slash command do I use in Copilot CLI to save the current session to a file?
+
+To save or export your current session in **GitHub Copilot CLI**, use the **`/share`** command (or its alias **`/export`**).
+
+---
+
+### Standard Usage
+
+To export the current session as a local Markdown file, run:
+
+```bash
+/share file [optional_path]
+
+```
+
+*(Or simply `/share file` or `/export file`)*
+
+* **Without a path:** Copilot CLI automatically generates a timestamped Markdown file (e.g., `copilot-session-<id>.md`) in your current working directory.
+* **With a path:** You can specify a folder or file name where you want to save the session (e.g., `/share file ~/Desktop/my-session.md`).
+
+---
+
+### Other Output Options
+
+* **HTML format:** Save as an interactive HTML transcript using `/share html`.
+* **GitHub Gist:** Export directly to a secret GitHub Gist using `/share gist`.
+
+---
+

@@ -5,6 +5,12 @@
 
 ---
 
+[Do You Still Need an IDE If Agents Write Your Code? JetBrains](https://www.youtube.com/watch?v=AHFGMkzrfwM)  
+
+- Air inside IDEs
+
+---
+
 [9 JetBrains Rider Secrets You Should Know Gui Ferreira](https://www.youtube.com/watch?v=TzzR51b4bPY&t=56s)  
 
 | Shortcut     | Effect | Description | Notes |

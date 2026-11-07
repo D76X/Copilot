@@ -28,6 +28,7 @@ It provides all the following in a lightweight package:
 ## Optimizations
 
 [Quickstart: Optimize a hosted agent (preview)](https://learn.microsoft.com/en-us/azure/foundry/agents/quickstarts/quickstart-optimize-hosted-agent?pivots=azd)  
+
 [Introducing Agent Optimizer in Foundry Agent Service](https://devblogs.microsoft.com/foundry/agent-optimizer-build2026/)    
 
 ---

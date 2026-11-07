@@ -1,4 +1,4 @@
-### What is Local Foundry?
+### What is Foundry Local?
 
 [Run local AI on any PC or Mac - Microsoft Foundry Local Microsoft Mechanics](https://www.youtube.com/watch?v=qL3HADDI6W4&t=4s)    
 [What is Foundry Local?](https://learn.microsoft.com/en-us/azure/foundry-local/what-is-foundry-local)   
@@ -32,4 +32,3 @@ handle data on-site while utilizing powerful AI models, allowing
 developers to build and ship in-production AI apps on user devices.
 
 ---
-

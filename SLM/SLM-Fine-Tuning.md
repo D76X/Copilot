@@ -6,6 +6,8 @@
 
 [Finetuning LLM by Krish Naik](https://www.youtube.com/playlist?list=PLZoTAELRMXVN9VbAx5I2VvloTtYmlApe3)  
 
+[Is Fine-Tuning Still Needed? LLMs, RAG, & LoRA IBM Technology](https://www.youtube.com/watch?v=-W2JdSl1v48)  
+
 ---
 
 # Gemma 4 Fine-Tuning

@@ -27,10 +27,16 @@
 - keep the comntext narrow and controlled
 
 | Goal | Technique |
-| --- | --- |
-| Ensure complete information | Fill the bucket |
-| Prevent incorrect information | Avoid context poisoning |
-| Use specific information | Inject focused documentation |
-| Constrain to team decisions | Record project culture |
+| ----------------------------- | ---------------------------- |
+| Ensure complete information   | Fill the bucket              |
+| Prevent incorrect information | Avoid context poisoning      |
+| Use specific information      | Inject focused documentation |
+| Constrain to team decisions   | Record project culture       |
+
+---
+
+# [Fill the bucket](https://app.pluralsight.com/ilx/video-courses/abc09662-ba46-4266-9dd1-40ebc4d4d67b/2d9bf3ce-1c64-4138-a466-6b8672c5b1a0/73951fd7-c8f0-4510-ac3a-10b679a8ea04)  
+
+- Use the LLM to fill the bucket
 
 ---

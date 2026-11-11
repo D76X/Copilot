@@ -35,8 +35,32 @@
 
 ---
 
+# [Avoid Context Poisoning](https://app.pluralsight.com/ilx/video-courses/abc09662-ba46-4266-9dd1-40ebc4d4d67b/2d9bf3ce-1c64-4138-a466-6b8672c5b1a0/6e5f0d6e-84ce-41fc-9750-d44cbf3f6108)  
+
+Prevent incorect information from enetring the cotext.
+
+In the context:
+
+- give specifics details 
+- give specifics guidance
+
+---
+
 # [Fill the bucket](https://app.pluralsight.com/ilx/video-courses/abc09662-ba46-4266-9dd1-40ebc4d4d67b/2d9bf3ce-1c64-4138-a466-6b8672c5b1a0/73951fd7-c8f0-4510-ac3a-10b679a8ea04)  
 
-- Use the LLM to fill the bucket
+## Iterate between AK mode and PLAN mode
+
+- select ask mode
+- use the LLM to fill the bucket, i..e. exploring a prarticular problem with the code base / architecture
+- ask the model to provide implementation options to solve a particular problem
+- after reviewing the options select one and ask the agent to produce a step-by-step summary implementation plan
+- start a NEW session to clear the context
+- swicth to plan mode
+- crete an implementatin plan fom the step-by-step summary implementation plan
+- switch backl to ask mode to REVIEW the implementation plan
+- REVIEW the steps of the implementation plan
+- ask specific questions
+
+##
 
 ---

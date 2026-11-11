@@ -8,6 +8,10 @@
 
 [Is Fine-Tuning Still Needed? LLMs, RAG, & LoRA IBM Technology](https://www.youtube.com/watch?v=-W2JdSl1v48)  
 
+[What Is Model Distillation? How Smaller AI Models Learn IBM Technology](https://www.youtube.com/watch?v=4uvq8Cz3A7Y)  
+
+[RAG vs. Fine Tuning IBM Technology](https://www.youtube.com/watch?v=00Q0G84kq3M)  
+
 ---
 
 # Gemma 4 Fine-Tuning

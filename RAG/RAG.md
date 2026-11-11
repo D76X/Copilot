@@ -13,3 +13,7 @@
 [What Is Chunkless RAG? How Docling & AI Agents Navigate Documents IBM Technology and IBM Developer](https://www.youtube.com/watch?v=vRZNJWw78BQ)  
 
 [Top 3 RAG Retrieval Strategies: Sparse, Dense, & Hybrid Explained IBM Technology](https://www.youtube.com/watch?v=r0Dciuq0knU)  
+
+[RAG vs. Fine Tuning IBM Technology](https://www.youtube.com/watch?v=00Q0G84kq3M)  
+
+---

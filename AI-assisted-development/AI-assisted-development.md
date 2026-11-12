@@ -35,6 +35,10 @@
 
 ---
 
+# [Inject focused documentation](https://app.pluralsight.com/ilx/video-courses/abc09662-ba46-4266-9dd1-40ebc4d4d67b/2d9bf3ce-1c64-4138-a466-6b8672c5b1a0/fd546f9a-b7ef-46ad-ae6c-de6fe26daa45)  
+
+---
+
 # [Avoid Context Poisoning](https://app.pluralsight.com/ilx/video-courses/abc09662-ba46-4266-9dd1-40ebc4d4d67b/2d9bf3ce-1c64-4138-a466-6b8672c5b1a0/6e5f0d6e-84ce-41fc-9750-d44cbf3f6108)  
 
 Prevent incorect information from enetring the cotext.
@@ -43,6 +47,8 @@ In the context:
 
 - give specifics details 
 - give specifics guidance
+- start a new session with erroneous information removed or with a clean summary from the old session
+- the best option is always to start from scratch
 
 ---
 

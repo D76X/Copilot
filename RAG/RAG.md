@@ -16,4 +16,8 @@
 
 [RAG vs. Fine Tuning IBM Technology](https://www.youtube.com/watch?v=00Q0G84kq3M)  
 
+[Unlock Better RAG & AI Agents with Docling IBM Technology](https://www.youtube.com/watch?v=rrQHnibpXX8)    
+
+[What is OpenRAG? Unlocking the Future of RAG in Generative AI IBM Technology](https://www.youtube.com/watch?v=qreMmsOY86A)   
+
 ---

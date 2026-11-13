@@ -168,3 +168,90 @@ up to massive 2.4-trillion-parameter Mixture-of-Experts (MoE) flagships. [1, 2, 
 [7] [https://kilo.ai](https://kilo.ai/models/by/qwen)
 
 ---
+
+# Is Qwen very good for coding and software architecture?
+
+Yes, Qwen is considered one of the strongest model families for coding, 
+particularly among open-weight models. Its effectiveness for software 
+architecture depends heavily on the model size you choose. 
+
+[1] (https://www.secondtalent.com/resources/qwen-ai-for-coding-reviews-usage-and-performance/), 
+[2] (https://www.reddit.com/r/LocalLLaMA/comments/1uqzjdy/qwen3627b_does_not_understand_software/), 
+[3] (https://macaron.im/blog/is-qwen-3-5-good-for-coding)
+
+`Alibaba's Qwen lineup` includes flagship general-purpose models (such as `Qwen 3.8-Max` and the `Qwen 4-Max` preview) alongside specialized coding models (`Qwen3-Coder`). 
+
+[1] (https://qwen.ai/blog?id=qwen3.8), 
+[2] (https://www.yottalabs.ai/post/qwen-4-release-date-what-is-known-how-to-prepare-2026), 
+[3] (https://github.com/QwenLM/Qwen3-Coder)
+
+## Strengths in Coding
+
+- Top-tier benchmarks. Flagship releases like `Qwen 3.8-Max` and specialized models like 
+`Qwen3-Coder-Next` score competitively on real-world software engineering benchmarks like 
+`SWE-bench Pro` and `Terminal-Bench`. 
+
+[1] (https://qwen.ai/blog?id=qwen3-coder-next), 
+[2] (https://qwen.ai/blog?id=qwen3.8)
+
+- Agentic workflows. 
+Newer Qwen models are trained for multi-step execution, repository-level edits, and terminal usage. 
+`They integrate with coding agents like Claude Code, Cline, and Qwen Code`. 
+
+[1] (https://qwen.ai/blog?id=qwen3.6-27b), 
+[2] (https://github.com/QwenLM/Qwen3-Coder), 
+[3] (https://qwen.ai/blog?id=qwen3-coder-next)
+
+- Large context windows. 
+Most modern Qwen models support `262K tokens` natively and can stretch up to `1 million tokens`. 
+This lets you feed entire repositories or large documentation sets into a single prompt. 
+
+[1] (https://qwen.ai/blog?id=qwen3.8-flash-next), 
+[2] (https://vipjavascript.com/blog/qwen-3-5-comprehensive-guide)
+
+- Local efficiency. 
+`Mixture-of-Experts (MoE) variants` like `Qwen3-Coder-Next (80B total parameters, 3B active)` and 
+`Qwen3.8-Flash-Next (125B total, 6B active)` deliver fast inference on consumer hardware while 
+maintaining high code quality. 
+
+[1] (https://dev.to/sienna/qwen3-coder-next-the-complete-2026-guide-to-running-powerful-ai-coding-agents-locally-1k95), 
+[2] (https://qwen.ai/blog?id=qwen3.8-flash-next)
+
+## Performance in Software Architecture
+
+- Flagship models excel at system design. Massive reasoning models like `Qwen 3.8-Max (2.4T parameters)` 
+handle complex, long-horizon planning, cross-file refactoring, and high-level architectural trade-offs well.
+
+- Smaller models struggle with big-picture design. While smaller dense models (such as the `27B variants`) write clean functions and fix bugs quickly, they can lose architectural coherence across large codebases.
+
+- `Quantization impacts architectural reasoning`. One point of agreement among users on `r/LocalLLaMA` 
+is that heavy compression (such as 4-bit quantization) degrades a model's grasp of software architecture, 
+even if basic coding benchmarks look fine. Running models at `5-bit, 8-bit`, or unquantized weights 
+preserves design reasoning. 
+
+[1] (https://www.reddit.com/r/LocalLLaMA/comments/1uqzjdy/qwen3627b_does_not_understand_software/), 
+[2] (https://qwen.ai/blog?id=qwen3.8), 
+[3] (https://qwen.ai/blog?id=qwen3.6-27b)
+
+## Choosing the Right Qwen Model
+
+- Use Case	Recommended Model	Key Specs
+
+System Architecture & Complex Planning	Qwen 3.8-Max or Qwen 4-Max (Preview)	Flagship reasoning models designed for long-horizon tasks and multi-file system design.
+
+Agentic Coding & Local Workstations	Qwen3-Coder-Next	80B MoE (3B active parameters); optimized for local coding agents and fast tool use.
+
+Mid-Range GPUs (24GB VRAM)	Qwen3.8-27B or Qwen3-Coder-30B-A3B	Strong single-file generation, debugging, and scripting without cloud API costs.
+
+Lightweight Hardware (8GB–12GB VRAM)	Qwen2.5-Coder (7B or 14B)	Best suited for autocomplete, boilerplate, and isolated scripts rather than architectural design.
+
+If you are designing a system from scratch or refactoring a complex microservice architecture, 
+stick to the Max or Plus API tiers. For daily feature implementation, bug fixes, and local agentic coding, 
+the Qwen3-Coder or 27B/30B open-weight models offer strong performance. 
+
+[1] (https://www.yottalabs.ai/post/qwen-4-release-date-what-is-known-how-to-prepare-2026), 
+[2] (https://qwen.ai/blog?id=qwen3.8), 
+[3] (https://macaron.im/blog/is-qwen-3-5-good-for-coding), 
+[4] (https://www.promptquorum.com/prompt-bites/best-qwen-model-for-coding)
+
+---

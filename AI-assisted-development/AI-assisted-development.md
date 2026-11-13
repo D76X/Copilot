@@ -35,7 +35,17 @@
 
 ---
 
+# [Record project culture](https://app.pluralsight.com/ilx/video-courses/abc09662-ba46-4266-9dd1-40ebc4d4d67b/2d9bf3ce-1c64-4138-a466-6b8672c5b1a0/964d7f2d-cb21-48c2-8467-04ec12dbba76)  
+
+---
+
 # [Inject focused documentation](https://app.pluralsight.com/ilx/video-courses/abc09662-ba46-4266-9dd1-40ebc4d4d67b/2d9bf3ce-1c64-4138-a466-6b8672c5b1a0/fd546f9a-b7ef-46ad-ae6c-de6fe26daa45)  
+
+- bring foccussed documentation into teh context for better results
+- use MCP Server for documentation such as `context7` to reach out to the most up-to-date docs
+- in the prompt, skill, etc. make sure the MCP server is flagged
+
+Otherwise LLMs may return out-of-date suggestions based on their knowledge at teh cut-off date.
 
 ---
 

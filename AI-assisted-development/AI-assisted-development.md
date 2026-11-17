@@ -17,9 +17,15 @@
 
 ---
 
-## Managing Context
+## Design Custom Agents and Modes
+
+[What is an Agent?](https://app.pluralsight.com/ilx/video-courses/abc09662-ba46-4266-9dd1-40ebc4d4d67b/2d6afe5e-c214-4e75-879a-7eda69af2794/2e4e1600-29f5-4a6e-81eb-1c49e385ccb4)  
+
+---
 
 # Context Management
+
+## Managing Context
 
 [Context Management Strategy](https://app.pluralsight.com/ilx/video-courses/abc09662-ba46-4266-9dd1-40ebc4d4d67b/2d9bf3ce-1c64-4138-a466-6b8672c5b1a0/7c515fdf-24a9-4f09-a783-825938fdb5e7)  
 
@@ -36,6 +42,12 @@
 ---
 
 # [Record project culture](https://app.pluralsight.com/ilx/video-courses/abc09662-ba46-4266-9dd1-40ebc4d4d67b/2d9bf3ce-1c64-4138-a466-6b8672c5b1a0/964d7f2d-cb21-48c2-8467-04ec12dbba76)  
+
+- create a rulebook document that records cases and decisions that are in accordance to the team's rules and standards
+- create this document iteratively with the use of the AI
+- the rulebook document must be periodically reviewed as they may change over time
+- the rulebook document can be at the teams's level or the project level, the latter is best as it applies to a team working on a project
+- the rulebook document represents project-specific constraints in most cases 
 
 ---
 

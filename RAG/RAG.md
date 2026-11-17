@@ -30,6 +30,8 @@
 
 [RAG's Evolution: From Simple Retrieval to Agentic AI IBM Technology](https://www.youtube.com/watch?v=JB2P5Gk23VI)  
 
+[MCP vs. RAG: How AI Agents & LLMs Connect to Data IBM Technology](https://www.youtube.com/watch?v=X95MFcYH1_s)  
+
 ---
 
 > Docling

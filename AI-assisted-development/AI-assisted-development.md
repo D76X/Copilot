@@ -21,6 +21,20 @@
 
 [What is an Agent?](https://app.pluralsight.com/ilx/video-courses/abc09662-ba46-4266-9dd1-40ebc4d4d67b/2d6afe5e-c214-4e75-879a-7eda69af2794/2e4e1600-29f5-4a6e-81eb-1c49e385ccb4)  
 
+- an agent is instructions with access to tools, such as RAG and MCP servers
+- an agent is the Unit Of Work for an AI-based solution
+- each agent runs in its own isolated session, so that context can be controlled
+- agents will be chained to form a pipeline
+
+## Agents that you normally need
+
+> Planning role 
+
+1. An agent to write User Stories - the focus of this agent is the business problem
+2. An agent to write technical specifications from those User Stories- the focus of this agent is the technical solution
+
+> 
+
 ---
 
 # Context Management

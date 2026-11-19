@@ -10,8 +10,23 @@
 
 # Commands
 
+## [Extracting Specific Fields with jq](https://share.gemini.google/xv7Xs1fZlWYf)
+
+```
+podman ps -a --size --format json | jq '[.[] | {id: .Id[:12], name: .Names[0], image: .Image, status: .Status, size: .Size}]'
+```
+
+Each container object in the JSON array includes fields such as Id, Names, Image, State, Status, CreatedAt, and Size (with Size typically containing readable size details or rootfs/rw size info depending on your Podman version). To inspect only key fields per container:
+
+If you need raw numeric byte values instead of formatted strings in Size, check the exact keys on one container first with podman ps -a --size --format json | jq '.[0] | keys'.
+
+---
+
+## Other Commands
+
 | Command                                                                         | Meaning           | Notes |
 | :------------------------------------------------------------------------------ | :---------------: | ----: |
+| `podman ps -a --size --format json`  |   pretty-format   | NA |
 | `podman images --format "table {{.Repository}}\t{{.Tag}}\t{{.Size}}\t{{.ID}}"`  |   pretty-format   | NA |
 | `podman images --format "{{.Repository}}:{{.Tag}}"`                             |   pretty-format no headers | NA |
 | `podman images --format "Image: {{.Repository}}:{{.Tag}} | Size: {{.Size}} | ID: {{.ID}}"`|   vertical layout   | NA |

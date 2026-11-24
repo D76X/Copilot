@@ -17,6 +17,10 @@
 
 ---
 
+## [Define an Agent -Demo](https://app.pluralsight.com/ilx/video-courses/abc09662-ba46-4266-9dd1-40ebc4d4d67b/2d6afe5e-c214-4e75-879a-7eda69af2794/ae140518-0f59-48a6-85f6-8cbde1992fb9)  
+
+---
+
 ## Design Custom Agents and Modes
 
 [What is an Agent?](https://app.pluralsight.com/ilx/video-courses/abc09662-ba46-4266-9dd1-40ebc4d4d67b/2d6afe5e-c214-4e75-879a-7eda69af2794/2e4e1600-29f5-4a6e-81eb-1c49e385ccb4)  
@@ -45,6 +49,12 @@ some specific to the the technology stack of choice.
 These agents may also depend on the team's preference and cunture
 and may need to change over time to keep up with the changing needs
 of the team and the project.
+
+The Agent should be designed by or with the co-operation of the people who have the strongest expertise in the specific technical area.
+
+> Taste and Discernment CANNOT be taught to an Agent!
+> Taste trumps technical knowledge; taste is opinion informed by experience 
+> Discernment is the ability to tell two solution apart and figure out which is the bast for a case; it is expertise built by practice
 
 1. Agent to design EF entities
 2. Agent to design Databses migrations

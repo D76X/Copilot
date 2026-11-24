@@ -14,7 +14,6 @@
 3. Granite4.1:3b    >> BAD
 4. laguna-xs.2      >> BAD
 
-
 ---
 
 # SquadDash

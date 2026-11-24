@@ -33,7 +33,26 @@
 1. An agent to write User Stories - the focus of this agent is the business problem
 2. An agent to write technical specifications from those User Stories- the focus of this agent is the technical solution
 
-> 
+> Testing role 
+
+1. An agent to write Unit Test
+2. An agent to write Integration Test
+
+> Coding role 
+
+Separate specific coding functions into separate specialized agents, 
+some specific to the the technology stack of choice.
+These agents may also depend on the team's preference and cunture
+and may need to change over time to keep up with the changing needs
+of the team and the project.
+
+1. Agent to design EF entities
+2. Agent to design Databses migrations
+3. Agent to design Services
+4. Agent to design APIs
+5. Agent to design state management
+6. Agent to design UI components within a selected UI framework
+7. etc..
 
 ---
 
